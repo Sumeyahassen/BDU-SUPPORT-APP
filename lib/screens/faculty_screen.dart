@@ -8,7 +8,10 @@ class FacultyScreen extends StatelessWidget {
     final faculties = mockFaculties;
 
     return Scaffold(
-      appBar: AppBar(title: Text('Select Faculty')),
+      backgroundColor: Colors.blue[200],
+      appBar: AppBar(title: Text('Select Faculty'),
+        backgroundColor: Colors.blue[200],
+      ),
       body: ListView.builder(
         itemCount: faculties.length,
         itemBuilder: (context, index) {

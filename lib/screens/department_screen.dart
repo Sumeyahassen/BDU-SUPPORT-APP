@@ -10,7 +10,10 @@ class DepartmentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('${faculty.name} Departments')),
+      backgroundColor: Colors.blue[200],
+      appBar: AppBar(title: Text('${faculty.name} Departments'),
+      backgroundColor: Colors.blue[200],
+      ),
       body: ListView.builder(
         itemCount: faculty.departments.length,
         itemBuilder: (context, index) {
