@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
-import 'screens/splash_screen.dart';
+import 'features/home/home_screen.dart';
 
-void main() => runApp(StudentSupportApp());
+void main() {
+  runApp(const BduSupportApp());
+}
 
-class StudentSupportApp extends StatelessWidget {
+class BduSupportApp extends StatelessWidget {
+  const BduSupportApp({super.key});
+
   @override
   Widget build(BuildContext context) {
+  
     return MaterialApp(
-      title: 'Student Support App',
+      title: 'BDU-SUPPORT-APP',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: SplashScreen(),
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
