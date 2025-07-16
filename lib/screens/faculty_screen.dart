@@ -1,33 +1,60 @@
 import 'package:flutter/material.dart';
-import '../data/mock_data.dart';
-import 'department_screen.dart';
+import '../../data/mock/mock_departments.dart';
 
-class FacultyScreen extends StatelessWidget {
+class DepartmentSelectionScreen extends StatelessWidget {
+  const DepartmentSelectionScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    final faculties = mockFaculties;
-
     return Scaffold(
-      backgroundColor: Colors.blue[200],
-      appBar: AppBar(title: Text('Select Faculty'),
-        backgroundColor: Colors.blue[200],
+      appBar: AppBar(
+        title: const Text('Select Department'),
+        backgroundColor: Colors.blue,
       ),
-      body: ListView.builder(
-        itemCount: faculties.length,
-        itemBuilder: (context, index) {
-          final faculty = faculties[index];
-          return ListTile(
-            title: Text(faculty.name),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => DepartmentScreen(faculty: faculty),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: GridView.builder(
+          itemCount: mockDepartments.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 16,
+            mainAxisSpacing: 16,
+            childAspectRatio: 1.2,
+          ),
+          itemBuilder: (context, index) {
+            final department = mockDepartments[index];
+            return GestureDetector(
+              onTap: () {
+                // TODO: Navigate to department-specific course list
+              },
+              child: Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16),
                 ),
-              );
-            },
-          );
-        },
+                color: Colors.blue[50],
+                child: Center(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.school, size: 48, color: Colors.blue[700]),
+                      const SizedBox(height: 12),
+                      Text(
+                        department.name,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black87,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

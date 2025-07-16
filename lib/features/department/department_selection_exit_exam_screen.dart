@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:bdu_exam_app/features/department/department_courses_screen.dart';
+import '../../features/exit_exam/exit_exam_year_department_screen.dart';
 
-class DepartmentSelectionScreen extends StatelessWidget {
-  const DepartmentSelectionScreen({super.key});
+class DepartmentSelectionForExitExamScreen extends StatelessWidget {
+  final int selectedYear;
+  const DepartmentSelectionForExitExamScreen({
+    super.key,
+    required this.selectedYear,
+  });
 
   static const departments = [
     {'id': 'se', 'name': 'Software Engineering', 'icon': Icons.code},
@@ -16,7 +20,7 @@ class DepartmentSelectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Select Department'),
+        title: Text('Select Department ($selectedYear)'),
         backgroundColor: Colors.blue,
       ),
       backgroundColor: const Color(0xFFF7FAFC),
@@ -50,9 +54,9 @@ class DepartmentSelectionScreen extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder:
-                        (context) => DepartmentCoursesScreen(
+                        (context) => ExitExamYearDepartmentScreen(
+                          year: selectedYear,
                           departmentName: department['name'] as String,
-                          departmentIcon: department['icon'] as IconData,
                         ),
                   ),
                 );
