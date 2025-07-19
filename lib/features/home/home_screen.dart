@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import '../department/department_selection_screen.dart';
 import '../courses/course_list_screen.dart';
-import '../about/about_screen.dart' hide DepartmentSelectionScreen;
 import '../exit_exam/exit_exam_screen.dart';
+import 'package:bdu_exam_app/features/about/about_screen.dart'
+    hide DepartmentSelectionScreen;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -77,19 +78,21 @@ class _HomeScreenState extends State<HomeScreen>
               child: ElevatedButton(
                 onPressed:
                     () => _navigate(context, const DepartmentSelectionScreen()),
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,
+                minimumSize: const Size(220,60 )),
                 child: const Text(
                   'Select Department',
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
+      
                   ),
                 ),
               ),
             ),
             ElevatedButton(
               onPressed: () => _navigate(context, const CourseListScreen()),
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,minimumSize: const Size(220, 60)),
               child: const Text(
                 'Common Courses',
                 style: TextStyle(

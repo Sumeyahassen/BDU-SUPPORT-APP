@@ -16,7 +16,8 @@ class DepartmentSelectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Select Department',
+        title: const Text(
+          'Select Department',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.blue,
@@ -56,6 +57,7 @@ class DepartmentSelectionScreen extends StatelessWidget {
                       MaterialPageRoute(
                         builder:
                             (context) => DepartmentCoursesScreen(
+                              departmentId: department['id'] as String,
                               departmentName: department['name'] as String,
                               departmentIcon: department['icon'] as IconData,
                             ),

@@ -38,7 +38,7 @@ class DepartmentSelectionScreen extends StatelessWidget {
                 ),
               ),
               subtitle: Text(
-                course.isCommon ? 'Common Course' : 'Department-Specific',
+                mockCommonCourses.contains(course) ? 'Common Course' : 'Department-Specific',
                 style: const TextStyle(fontSize: 15, color: Colors.black54),
               ),
               onTap: () {

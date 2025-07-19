@@ -88,7 +88,9 @@ class AboutScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('About',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-        ), backgroundColor: Colors.blue),
+        ),
+        backgroundColor: Colors.blue,
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -96,9 +98,12 @@ class AboutScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.asset("assets/images/sumeya.png",height: 150, ),
-               const SizedBox(height: 20),
-               const Text(
+              Image.asset(
+                "assets/images/sumeya.png",
+                height: 150,
+              ),
+              const SizedBox(height: 20),
+              const Text(
                 'BDU-SUPPORT-APP',
                 style: TextStyle(
                   fontSize: 28,
@@ -108,7 +113,7 @@ class AboutScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 12),
-               const Text(
+              const Text(
                 'Version 1.0.0',
                 style: TextStyle(fontSize: 16, color: Colors.black54),
               ),
@@ -120,20 +125,20 @@ class AboutScreen extends StatelessWidget {
               ),
               const SizedBox(height: 32),
               const Divider(),
-             const SizedBox(height: 16),
+              const SizedBox(height: 16),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(Icons.code, color: Colors.blue),
-                  const SizedBox(width: 8),
-                  const Text(
+                  Icon(Icons.code, color: Colors.blue),
+                  SizedBox(width: 8),
+                  Text(
                     'Developed by Sumeya Hassen',
                     style: TextStyle(fontSize: 16, color: Colors.black87),
                   ),
                 ],
               ),
-           const SizedBox(height: 8),
-            const Text(
+              const SizedBox(height: 8),
+              const Text(
                 '© 2025 Bahir Dar University',
                 style: TextStyle(fontSize: 14, color: Colors.black45),
               ),

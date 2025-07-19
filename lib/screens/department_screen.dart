@@ -11,7 +11,7 @@ class DepartmentScreen extends StatelessWidget {
     // Example: Filter courses for this department
     final departmentCourses =
         mockDepartmentCourses
-            .where((course) => course.departments.contains(department.id))
+            .where((course) => course.departmentId == department.id)
             .toList();
 
     return Scaffold(
@@ -50,9 +50,7 @@ class DepartmentScreen extends StatelessWidget {
                           return ListTile(
                             title: Text(course.name),
                             subtitle: const Text('Department-Specific Course'),
-                            onTap: () {
-                              
-                            },
+                            onTap: () {},
                           );
                         },
                       ),

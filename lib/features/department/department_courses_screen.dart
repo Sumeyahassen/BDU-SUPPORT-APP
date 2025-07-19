@@ -1,52 +1,30 @@
 import 'package:flutter/material.dart';
+import '../../data/models/course.dart';
+import '../../data/mock/mock_courses.dart';
+import '../courses/course_detail_screen.dart';
 
 class DepartmentCoursesScreen extends StatelessWidget {
+  final String departmentId;
   final String departmentName;
   final IconData departmentIcon;
 
   const DepartmentCoursesScreen({
     super.key,
+    required this.departmentId,
     required this.departmentName,
     required this.departmentIcon,
   });
 
-  // Example: Replace with your real data source
-  List<String> getCoursesForDepartment(String department) {
-    switch (department) {
-      case 'Software Engineering':
-        return [
-          'Software Requirements Engineering',
-          'Software Design and Architecture',
-          'Web Application Development',
-        ];
-      case 'Computer Science':
-        return [
-          'Artificial Intelligence',
-          'Machine Learning',
-          'Computer Networks',
-        ];
-      case 'Information Technology':
-        return [
-          'IT Project Management',
-          'Network Administration',
-          'Cloud Computing',
-        ];
-      case 'Information Systems':
-        return [
-          'Business Process Modeling',
-          'Enterprise Resource Planning',
-          'Information Systems Audit',
-        ];
-      case 'Cyber Security':
-        return ['Network Security', 'Cryptography', 'Ethical Hacking'];
-      default:
-        return [];
-    }
+  List<Course> getCoursesForDepartment(String departmentId) {
+    return mockDepartmentCourses
+        .where((course) => course.departmentId == departmentId)
+        .toList();
   }
 
   @override
   Widget build(BuildContext context) {
-    final courses = getCoursesForDepartment(departmentName);
+    final courses = getCoursesForDepartment(departmentId);
+  
 
     return Scaffold(
       appBar: AppBar(
@@ -99,7 +77,7 @@ class DepartmentCoursesScreen extends StatelessWidget {
                           size: 32,
                         ),
                         title: Text(
-                          course,
+                          course.name,
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
@@ -107,7 +85,14 @@ class DepartmentCoursesScreen extends StatelessWidget {
                           ),
                         ),
                         onTap: () {
-                          // TODO: Navigate to course detail screen
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (context) =>
+                                      CourseDetailScreen(course: course),
+                            ),
+                          );
                         },
                       ),
                     ),
