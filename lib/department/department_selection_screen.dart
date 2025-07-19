@@ -9,7 +9,7 @@ class DepartmentSelectionScreen extends StatelessWidget {
     final allCourses = [...mockCommonCourses, ...mockDepartmentCourses];
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Courses'),
+        title: const Text('Courses',style: TextStyle(color: Colors.white),),
         backgroundColor: Colors.blue,
       ),
       backgroundColor: const Color(0xFFF7FAFC),

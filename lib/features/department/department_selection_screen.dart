@@ -16,7 +16,9 @@ class DepartmentSelectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Select Department'),
+        title: const Text('Select Department',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Colors.blue,
       ),
       backgroundColor: const Color(0xFFF7FAFC),
@@ -31,32 +33,37 @@ class DepartmentSelectionScreen extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
-            child: ListTile(
-              leading: Icon(
-                department['icon'] as IconData,
-                color: Colors.blue,
-                size: 32,
-              ),
-              title: Text(
-                department['name'] as String,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                  color: Color(0xFF1E293B),
+            child: SizedBox(
+              height: 80,
+              child: Center(
+                child: ListTile(
+                  leading: Icon(
+                    department['icon'] as IconData,
+                    color: Colors.blue,
+                    size: 32,
+                  ),
+                  title: Text(
+                    department['name'] as String,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                      color: Color(0xFF1E293B),
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder:
+                            (context) => DepartmentCoursesScreen(
+                              departmentName: department['name'] as String,
+                              departmentIcon: department['icon'] as IconData,
+                            ),
+                      ),
+                    );
+                  },
                 ),
               ),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder:
-                        (context) => DepartmentCoursesScreen(
-                          departmentName: department['name'] as String,
-                          departmentIcon: department['icon'] as IconData,
-                        ),
-                  ),
-                );
-              },
             ),
           );
         },

@@ -20,7 +20,9 @@ class DepartmentSelectionForExitExamScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Select Department ($selectedYear)'),
+        title: Text('Select Department ($selectedYear)',
+          style: const  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Colors.blue,
       ),
       backgroundColor: const Color(0xFFF7FAFC),

@@ -1,7 +1,7 @@
 name: bdu_exam_app
 description: A new Flutter project.
 
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
@@ -12,12 +12,19 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  url_launcher: ^6.2.5  # ✅ Correctly added here
+  url_launcher: ^6.2.5 # ✅ Correctly added here
+  marquee: ^2.2.3
 
 dev_dependencies:
   flutter_test:
-    sdk: flutter
-  flutter_lints: ^3.0.1  # Updated version (if you want, or keep yours)
+    sdk: flutter  
+  flutter_lints: ^3.0.1 # Updated version (if you want, or keep yours)
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/bdu.png
+    - assets/images/sumeya.png
+# pubspec.yaml
+
+  

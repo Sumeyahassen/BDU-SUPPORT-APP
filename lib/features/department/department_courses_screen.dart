@@ -89,23 +89,28 @@ class DepartmentCoursesScreen extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: ListTile(
-                    leading: const Icon(
-                      Icons.menu_book,
-                      color: Colors.blue,
-                      size: 32,
-                    ),
-                    title: Text(
-                      course,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                        color: Color(0xFF1E293B),
+                  child: SizedBox(
+                    height: 80,
+                    child: Center(
+                      child: ListTile(
+                        leading: const Icon(
+                          Icons.menu_book,
+                          color: Colors.blue,
+                          size: 32,
+                        ),
+                        title: Text(
+                          course,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: Color(0xFF1E293B),
+                          ),
+                        ),
+                        onTap: () {
+                          // TODO: Navigate to course detail screen
+                        },
                       ),
                     ),
-                    onTap: () {
-                      // TODO: Navigate to course detail screen
-                    },
                   ),
                 );
               },

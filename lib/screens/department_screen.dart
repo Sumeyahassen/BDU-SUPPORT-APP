@@ -4,8 +4,7 @@ import '../../data/mock/mock_courses.dart'; // If you want to show department co
 
 class DepartmentScreen extends StatelessWidget {
   final Department department;
-  const DepartmentScreen({Key? key, required this.department})
-    : super(key: key);
+  const DepartmentScreen({super.key, required this.department});
 
   @override
   Widget build(BuildContext context) {

@@ -23,7 +23,7 @@ class _CourseListScreenState extends State<CourseListScreen> {
             .toList();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Common Courses'),
+        title: const Text('Common Courses' ,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
         backgroundColor: Colors.blue,
       ),
       backgroundColor: const Color(0xFFF7FAFC),

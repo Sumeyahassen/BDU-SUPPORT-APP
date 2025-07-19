@@ -10,7 +10,10 @@ class CourseListScreen extends StatelessWidget {
     final commonCourses = mockCommonCourses;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Common Courses'),
+        title: const Text(
+          'Common Courses',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.blue,
       ),
       backgroundColor: const Color(0xFFF7FAFC),

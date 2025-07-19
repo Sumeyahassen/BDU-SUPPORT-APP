@@ -16,9 +16,9 @@ class DepartmentSelectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Select Your Department'),
+        title: const Text('Select Your Department',style: TextStyle(color: Colors.white),),
         backgroundColor: const Color(0xFF2563EB), // Matches your blue
-        leading: BackButton(color: Colors.white),
+        leading: const BackButton(color: Colors.white),
       ),
       backgroundColor: const Color(0xFFF7FAFC), // Light background
       body: Padding(
@@ -48,8 +48,8 @@ class DepartmentSelectionScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFDBEAFE), // Light blue circle
+                      decoration: const BoxDecoration(
+                        color: Color(0xFFDBEAFE), // Light blue circle
                         shape: BoxShape.circle,
                       ),
                       padding: const EdgeInsets.all(18),
@@ -86,7 +86,9 @@ class AboutScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('About'), backgroundColor: Colors.blue),
+      appBar: AppBar(title: const Text('About',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ), backgroundColor: Colors.blue),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -94,9 +96,9 @@ class AboutScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Icon(Icons.info_outline, size: 80, color: Colors.blue),
-              const SizedBox(height: 24),
-              const Text(
+              Image.asset("assets/images/sumeya.png",height: 150, ),
+               const SizedBox(height: 20),
+               const Text(
                 'BDU-SUPPORT-APP',
                 style: TextStyle(
                   fontSize: 28,
@@ -106,7 +108,7 @@ class AboutScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 12),
-              const Text(
+               const Text(
                 'Version 1.0.0',
                 style: TextStyle(fontSize: 16, color: Colors.black54),
               ),
@@ -118,21 +120,21 @@ class AboutScreen extends StatelessWidget {
               ),
               const SizedBox(height: 32),
               const Divider(),
-              const SizedBox(height: 16),
-              Row(
+             const SizedBox(height: 16),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(Icons.code, color: Colors.blue),
-                  SizedBox(width: 8),
-                  Text(
-                    'Developed by BDU Computing Faculty',
+                children: [
+                  const Icon(Icons.code, color: Colors.blue),
+                  const SizedBox(width: 8),
+                  const Text(
+                    'Developed by Sumeya Hassen',
                     style: TextStyle(fontSize: 16, color: Colors.black87),
                   ),
                 ],
               ),
-              const SizedBox(height: 8),
-              const Text(
-                '© 2024 Bahir Dar University',
+           const SizedBox(height: 8),
+            const Text(
+                '© 2025 Bahir Dar University',
                 style: TextStyle(fontSize: 14, color: Colors.black45),
               ),
             ],

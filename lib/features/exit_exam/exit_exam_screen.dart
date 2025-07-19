@@ -9,7 +9,9 @@ class ExitExamScreen extends StatelessWidget {
     final years = [2015, 2016, 2017];
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Exit Exam'),
+        title: const Text('Exit Exam',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
         backgroundColor: Colors.blue,
       ),
       backgroundColor: const Color(0xFFF7FAFC),
@@ -63,7 +65,7 @@ class ExitExamScreen extends StatelessWidget {
                         ),
                         child: Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.calendar_today,
                               color: Colors.blue,
                               size: 32,

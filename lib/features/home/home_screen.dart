@@ -4,8 +4,37 @@ import '../courses/course_list_screen.dart';
 import '../about/about_screen.dart' hide DepartmentSelectionScreen;
 import '../exit_exam/exit_exam_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<Offset> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 6),
+      vsync: this,
+    )..repeat(); // 🔁 Loop forever
+
+    _animation = Tween<Offset>(
+      begin: const Offset(-1, 0.0), // off-screen left
+      end: const Offset(1, 0.0), // off-screen right
+    ).animate(_controller);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose(); // always dispose controllers
+    super.dispose();
+  }
 
   void _navigate(BuildContext context, Widget screen) {
     Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
@@ -15,18 +44,32 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BDU-SUPPORT-APP'),
+        title: const Text(
+          'BDU-SUPPORT-APP',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+            color: Colors.white,
+          ),
+        ),
         backgroundColor: Colors.blue,
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.school, size: 80, color: Colors.blue),
+            Image.asset("assets/images/bdu.png"),
             const SizedBox(height: 20),
-            const Text(
-              'Welcome to BDU-SUPPORT-APP',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            SlideTransition(
+              position: _animation,
+              child: const Text(
+                'Welcome to BDU-SUPPORT-APP',
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
             ),
             const SizedBox(height: 16),
             Padding(
@@ -34,20 +77,26 @@ class HomeScreen extends StatelessWidget {
               child: ElevatedButton(
                 onPressed:
                     () => _navigate(context, const DepartmentSelectionScreen()),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                 child: const Text(
                   'Select Department',
-                  style: TextStyle(color: Colors.black),
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
               ),
             ),
             ElevatedButton(
               onPressed: () => _navigate(context, const CourseListScreen()),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
               child: const Text(
                 'Common Courses',
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
             ),
           ],
         ),
@@ -66,7 +115,7 @@ class HomeScreen extends StatelessWidget {
               leading: const Icon(Icons.home),
               title: const Text('Home'),
               onTap: () {
-                Navigator.pop(context); // Just close the drawer
+                Navigator.pop(context);
               },
             ),
             ListTile(
