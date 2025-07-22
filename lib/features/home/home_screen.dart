@@ -56,6 +56,7 @@ class _HomeScreenState extends State<HomeScreen>
         backgroundColor: Colors.blue,
       ),
       body: Center(
+        
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -79,11 +80,11 @@ class _HomeScreenState extends State<HomeScreen>
                 onPressed:
                     () => _navigate(context, const DepartmentSelectionScreen()),
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,
-                minimumSize: const Size(220,60 )),
+                minimumSize: const Size(200,50 )),
                 child: const Text(
-                  'Select Department',
+                  'Select Department', 
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
       
                   ),
@@ -92,11 +93,11 @@ class _HomeScreenState extends State<HomeScreen>
             ),
             ElevatedButton(
               onPressed: () => _navigate(context, const CourseListScreen()),
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,minimumSize: const Size(220, 60)),
+              style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,minimumSize: const Size(200, 50)),
               child: const Text(
                 'Common Courses',
                 style: TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
