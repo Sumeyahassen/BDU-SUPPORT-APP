@@ -24,23 +24,16 @@ class CourseDetailScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.blue,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 80,
-            child: Card(
-              
-              child: ListTile(
-                contentPadding: const EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 16,
-                  ),
-                leading: const Icon(Icons.ondemand_video, color: Colors.blue),
-                title: const Text('Videos',style: TextStyle(fontWeight: FontWeight.bold),),
-                trailing: const Icon(Icons.arrow_forward_ios),
+      body: SingleChildScrollView(
+        // ✅ Make content scrollable
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            children: [
+              _buildCard(
+                icon: Icons.ondemand_video,
+                iconColor: Colors.blue,
+                title: 'Videos',
                 onTap: () {
                   Navigator.push(
                     context,
@@ -51,47 +44,24 @@ class CourseDetailScreen extends StatelessWidget {
                   );
                 },
               ),
-            ),
-            ),
-            SizedBox(
-              height: 80,
-              child: Card(
-                child: ListTile(
-                  contentPadding: const EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 16,
-                  ),
-                  leading: const Icon(Icons.note, color: Colors.green),
-                  title: const Text('Lecture Notes',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                  trailing: const Icon(Icons.arrow_forward_ios),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            NotesScreen(notes: course.lectureNotes),
-                      ),
-                    );
-                  },
-                ),
+              _buildCard(
+                icon: Icons.note,
+                iconColor: Colors.green,
+                title: 'Lecture Notes',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder:
+                          (context) => NotesScreen(notes: course.lectureNotes),
+                    ),
+                  );
+                },
               ),
-            ),
-            SizedBox(
-              height: 80,
-            
-            child: Card(
-              child: ListTile(
-                 contentPadding:const EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 16,
-                  ),
-                leading: const Icon(Icons.book, color: Colors.orange),
-                title: const Text('Books',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                trailing: const Icon(Icons.arrow_forward_ios),
+              _buildCard(
+                icon: Icons.book,
+                iconColor: Colors.orange,
+                title: 'Books',
                 onTap: () {
                   Navigator.push(
                     context,
@@ -102,22 +72,10 @@ class CourseDetailScreen extends StatelessWidget {
                   );
                 },
               ),
-            ),
-            ),
-            SizedBox(
-              height: 80,
-            
-            child: Card(
-              child: ListTile(
-                contentPadding: const EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 16,
-                  ),
-                leading: const Icon(Icons.assignment, color: Colors.red),
-                title: const Text('Exams',
-                    style: TextStyle(fontWeight: FontWeight.bold),
-                  ),
-                trailing: const Icon(Icons.arrow_forward_ios),
+              _buildCard(
+                icon: Icons.assignment,
+                iconColor: Colors.red,
+                title: 'Exams',
                 onTap: () {
                   Navigator.push(
                     context,
@@ -128,9 +86,38 @@ class CourseDetailScreen extends StatelessWidget {
                   );
                 },
               ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  /// 🔧 Helper method to reduce repetition
+  Widget _buildCard({
+    required IconData icon,
+    required Color iconColor,
+    required String title,
+    required VoidCallback onTap,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Card(
+        child: SizedBox(
+          height: 80,
+          child: ListTile(
+            contentPadding: const EdgeInsets.symmetric(
+              vertical: 20,
+              horizontal: 16,
             ),
+            leading: Icon(icon, color: iconColor),
+            title: Text(
+              title,
+              style: const TextStyle(fontWeight: FontWeight.bold),
             ),
-          ],
+            trailing: const Icon(Icons.arrow_forward_ios),
+            onTap: onTap,
+          ),
         ),
       ),
     );

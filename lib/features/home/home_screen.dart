@@ -23,17 +23,17 @@ class _HomeScreenState extends State<HomeScreen>
     _controller = AnimationController(
       duration: const Duration(seconds: 6),
       vsync: this,
-    )..repeat(); // 🔁 Loop forever
+    )..repeat();
 
     _animation = Tween<Offset>(
-      begin: const Offset(-1, 0.0), // off-screen left
-      end: const Offset(1, 0.0), // off-screen right
+      begin: const Offset(-1, 0.0),
+      end: const Offset(1, 0.0),
     ).animate(_controller);
   }
 
   @override
   void dispose() {
-    _controller.dispose(); // always dispose controllers
+    _controller.dispose();
     super.dispose();
   }
 
@@ -47,80 +47,25 @@ class _HomeScreenState extends State<HomeScreen>
       appBar: AppBar(
         title: const Text(
           'BDU-SUPPORT-APP',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
-            color: Colors.white,
-          ),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
         ),
         backgroundColor: Colors.blue,
       ),
-      body: Center(
-        
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset("assets/images/bdu.png"),
-            const SizedBox(height: 20),
-            SlideTransition(
-              position: _animation,
-              child: const Text(
-                'Welcome to BDU-SUPPORT-APP',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-            const SizedBox(height: 16),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 24.0),
-              child: ElevatedButton(
-                onPressed:
-                    () => _navigate(context, const DepartmentSelectionScreen()),
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,
-                minimumSize: const Size(200,50 )),
-                child: const Text(
-                  'Select Department', 
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-      
-                  ),
-                ),
-              ),
-            ),
-            ElevatedButton(
-              onPressed: () => _navigate(context, const CourseListScreen()),
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.blue,minimumSize: const Size(200, 50)),
-              child: const Text(
-                'Common Courses',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
       drawer: Drawer(
         child: ListView(
+          padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(color: Colors.blue),
               child: Text(
-                'BDU-SUPPORT',
+                'Menu',
                 style: TextStyle(color: Colors.white, fontSize: 24),
               ),
             ),
             ListTile(
               leading: const Icon(Icons.home),
               title: const Text('Home'),
-              onTap: () {
-                Navigator.pop(context);
-              },
+              onTap: () => Navigator.pop(context),
             ),
             ListTile(
               leading: const Icon(Icons.school),
@@ -145,6 +90,73 @@ class _HomeScreenState extends State<HomeScreen>
             ),
           ],
         ),
+      ),
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return Center(
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.all(20),
+              child: ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxWidth: constraints.maxWidth > 600 ? 600 : double.infinity,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset("assets/images/bdu.png", height: 150),
+                    const SizedBox(height: 20),
+                    SlideTransition(
+                      position: _animation,
+                      child: const Text(
+                        'Welcome to BDU-SUPPORT-APP',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    ElevatedButton(
+                      onPressed:
+                          () => _navigate(
+                            context,
+                            const DepartmentSelectionScreen(),
+                          ),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        minimumSize: const Size(200, 50),
+                      ),
+                      child: const Text(
+                        'Select Department',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    ElevatedButton(
+                      onPressed:
+                          () => _navigate(context, const CourseListScreen()),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        minimumSize: const Size(200, 50),
+                      ),
+                      child: const Text(
+                        'Common Courses',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
