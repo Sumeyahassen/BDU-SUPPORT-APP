@@ -28,7 +28,7 @@ class DepartmentCoursesScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('$departmentName Courses'),
+        title: Text('$departmentName Courses',style:const TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
         backgroundColor: Colors.blue,
       ),
       backgroundColor: const Color(0xFFF7FAFC),

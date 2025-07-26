@@ -17,11 +17,12 @@ class ExitExamYearDepartmentScreen extends StatelessWidget {
         backgroundColor: Colors.blue,
       ),
       backgroundColor: const Color(0xFFF7FAFC),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(32.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(32.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Icon(Icons.description, color: Colors.blue, size: 64),
               const SizedBox(height: 24),
@@ -43,6 +44,7 @@ class ExitExamYearDepartmentScreen extends StatelessWidget {
             ],
           ),
         ),
+      ),
       ),
     );
   }

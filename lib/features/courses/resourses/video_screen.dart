@@ -1,31 +1,71 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class VideoScreen extends StatelessWidget {
-  final List<String> videos;
+  final Map<String, String> unitVideos = {
+    'Unit 1: ': '',
+    'Unit 2: ': '',
+    'Unit 3: ': '',
+    'Unit 4: ': '',
+    'Unit 5: ': '',
+  };
 
-  const VideoScreen({required this.videos, Key? key}) : super(key: key);
+  VideoScreen({super.key, required List<String> videos});
+
+  // Function to open a YouTube URL
+  void _launchYouTubeURL(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    final unitList = unitVideos.entries.toList();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Videos',
+          'Supported Videos',
           style: TextStyle(
-            fontSize: 24,
             fontWeight: FontWeight.bold,
+            fontSize: 20,
             color: Colors.white,
           ),
         ),
         backgroundColor: Colors.blue,
       ),
       body: ListView.builder(
-        itemCount: videos.length,
+        itemCount: unitList.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text('Video ${index + 1}'),
-            subtitle: Text(videos[index]),
-            // You can use a video player package to play the video
+          final unitName = unitList[index].key;
+          final videoUrl = unitList[index].value;
+
+          return Card(
+            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            elevation: 4,
+            child: ListTile(
+              contentPadding: const EdgeInsets.all(16),
+              title: Text(
+                unitName,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              trailing: const Icon(
+                Icons.play_circle_fill,
+                color: Colors.blue,
+                size: 32,
+              ),
+              onTap: () => _launchYouTubeURL(videoUrl),
+            ),
           );
         },
       ),

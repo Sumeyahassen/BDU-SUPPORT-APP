@@ -46,7 +46,7 @@ class CourseDetailScreen extends StatelessWidget {
               ),
               _buildCard(
                 icon: Icons.note,
-                iconColor: Colors.green,
+                iconColor: Colors.blue,
                 title: 'Lecture Notes',
                 onTap: () {
                   Navigator.push(
