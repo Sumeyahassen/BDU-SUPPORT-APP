@@ -81,7 +81,7 @@ class CourseDetailScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder:
-                          (context) => ExamsScreen(exams: course.examLinks),
+                          (context) => ExamsScreen(exams: course.examLinks, examUnits: const [],),
                     ),
                   );
                 },

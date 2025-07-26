@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen>
       appBar: AppBar(
         title: const Text(
           'BDU-SUPPORT-APP',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24,color: Colors.white),
         ),
         backgroundColor: Colors.blue,
       ),

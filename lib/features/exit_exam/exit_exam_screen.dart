@@ -7,9 +7,11 @@ class ExitExamScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final years = [2015, 2016, 2017];
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Exit Exam',
+        title: const Text(
+          'Exit Exam',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.blue,
@@ -21,7 +23,7 @@ class ExitExamScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Select Year',
+              'Select Year of Exit Exam',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -35,12 +37,9 @@ class ExitExamScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final year = years[index];
                   return Card(
-                    margin: const EdgeInsets.symmetric(
-                      vertical: 12,
-                      horizontal: 4,
-                    ),
-                    elevation: 5,
-                    shadowColor: Colors.blue.withOpacity(0.15),
+                    margin: const EdgeInsets.symmetric(vertical: 12),
+                    elevation: 4,
+                    shadowColor: Colors.blue.withOpacity(0.2),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
@@ -66,18 +65,24 @@ class ExitExamScreen extends StatelessWidget {
                         child: Row(
                           children: [
                             const Icon(
-                              Icons.calendar_today,
+                              Icons.calendar_month_outlined,
                               color: Colors.blue,
-                              size: 32,
+                              size: 28,
                             ),
-                            const SizedBox(width: 24),
+                            const SizedBox(width: 20),
                             Text(
                               'Year $year',
                               style: const TextStyle(
-                                fontWeight: FontWeight.bold,
                                 fontSize: 20,
+                                fontWeight: FontWeight.w600,
                                 color: Color(0xFF1E293B),
                               ),
+                            ),
+                            const Spacer(),
+                            const Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.blue,
+                              size: 18,
                             ),
                           ],
                         ),
