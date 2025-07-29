@@ -59,32 +59,32 @@ class _HomeScreenState extends State<HomeScreen>
               decoration: BoxDecoration(color: Colors.blue),
               child: Text(
                 'Menu',
-                style: TextStyle(color: Colors.white, fontSize: 24),
+                style: TextStyle(color: Colors.white, fontSize: 24,fontWeight: FontWeight.bold),
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.home),
+              leading: const Icon(Icons.home, color: Colors.blue),
               title: const Text('Home'),
               onTap: () => Navigator.pop(context),
             ),
             ListTile(
-              leading: const Icon(Icons.school),
+              leading: const Icon(Icons.school,color: Colors.blue,),
               title: const Text('Select Department'),
               onTap:
                   () => _navigate(context, const DepartmentSelectionScreen()),
             ),
             ListTile(
-              leading: const Icon(Icons.menu_book),
+              leading: const Icon(Icons.menu_book,color: Colors.blue,),
               title: const Text('Common Courses'),
               onTap: () => _navigate(context, const CourseListScreen()),
             ),
             ListTile(
-              leading: const Icon(Icons.school),
+              leading: const Icon(Icons.school,color: Colors.blue,),
               title: const Text('Exit Exam'),
               onTap: () => _navigate(context, const ExitExamScreen()),
             ),
             ListTile(
-              leading: const Icon(Icons.info),
+              leading: const Icon(Icons.info, color: Colors.blue),
               title: const Text('About'),
               onTap: () => _navigate(context, const AboutScreen()),
             ),

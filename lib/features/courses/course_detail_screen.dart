@@ -60,7 +60,7 @@ class CourseDetailScreen extends StatelessWidget {
               ),
               _buildCard(
                 icon: Icons.book,
-                iconColor: Colors.orange,
+                iconColor: Colors.blue,
                 title: 'Books',
                 onTap: () {
                   Navigator.push(
@@ -74,7 +74,7 @@ class CourseDetailScreen extends StatelessWidget {
               ),
               _buildCard(
                 icon: Icons.assignment,
-                iconColor: Colors.red,
+                iconColor: Colors.blue,
                 title: 'Exams',
                 onTap: () {
                   Navigator.push(
