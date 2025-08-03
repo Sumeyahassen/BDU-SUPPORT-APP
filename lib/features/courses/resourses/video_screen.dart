@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../../core/constants/app_colors.dart';
 
 class VideoScreen extends StatelessWidget {
   final Map<String, String> unitVideos = {
@@ -38,6 +39,7 @@ class VideoScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.blue,
       ),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: ListView.builder(
         itemCount: unitList.length,
         itemBuilder: (context, index) {
@@ -54,9 +56,10 @@ class VideoScreen extends StatelessWidget {
               contentPadding: const EdgeInsets.all(16),
               title: Text(
                 unitName,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
+                  color: AppColors.getTextColor(context),
                 ),
               ),
               trailing: const Icon(

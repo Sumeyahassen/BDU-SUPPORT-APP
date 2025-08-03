@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../core/constants/app_colors.dart';
 
 class NotesScreen extends StatelessWidget {
   const NotesScreen({Key? key, required List<String> notes}) : super(key: key);
@@ -25,13 +26,17 @@ class NotesScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.blue,
       ),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: ListView.builder(
         itemCount: units.length,
         itemBuilder: (context, index) {
           return Card(
             margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
             child: ListTile(
-              title: Text(units[index]),
+              title: Text(
+                units[index],
+                style: TextStyle(color: AppColors.getTextColor(context)),
+              ),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [

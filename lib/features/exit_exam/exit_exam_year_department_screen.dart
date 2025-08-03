@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../core/constants/app_colors.dart';
 
 class ExitExamYearDepartmentScreen extends StatefulWidget {
   final int year;
@@ -17,11 +18,8 @@ class ExitExamYearDepartmentScreen extends StatefulWidget {
 
 class _ExitExamYearDepartmentScreenState
     extends State<ExitExamYearDepartmentScreen> {
-  static const Color _backgroundColor = Color(0xFFF7FAFC);
   static const Color _appBarColor = Colors.blue;
   static const Color _iconColor = Colors.blue;
-  static const Color _titleColor = Color(0xFF1E293B);
-  static const Color _subtitleColor = Colors.black54;
 
   bool _isLoading = true;
 
@@ -54,8 +52,10 @@ class _ExitExamYearDepartmentScreenState
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    
     return Scaffold(
-      backgroundColor: _backgroundColor,
+      backgroundColor: AppColors.getBackgroundColor(context),
       appBar: AppBar(
         title: Text('Exit Exam ${widget.year} - ${widget.departmentName}',style:const TextStyle(color: Colors.white),),
         backgroundColor: _appBarColor,
@@ -71,10 +71,10 @@ class _ExitExamYearDepartmentScreenState
                   const SizedBox(height: 24),
                   Text(
                     'Exit Exam for ${widget.departmentName} (${widget.year})',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
-                      color: _titleColor,
+                      color: AppColors.getTextColor(context),
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -82,9 +82,9 @@ class _ExitExamYearDepartmentScreenState
                   _isLoading
                       ? const CircularProgressIndicator()
                       : _examFiles.isEmpty
-                      ? const Text(
+                      ? Text(
                         'No exam files available.',
-                        style: TextStyle(fontSize: 18, color: _subtitleColor),
+                        style: TextStyle(fontSize: 18, color: AppColors.getTextSecondaryColor(context)),
                         textAlign: TextAlign.center,
                       )
                       : ListView.separated(
@@ -104,7 +104,12 @@ class _ExitExamYearDepartmentScreenState
                                 Icons.file_present,
                                 color: Colors.blue,
                               ),
-                              title: Text(fileName),
+                              title: Text(
+                                fileName,
+                                style: TextStyle(
+                                  color: AppColors.getTextColor(context),
+                                ),
+                              ),
                               trailing: const Icon(Icons.open_in_new),
                               onTap: () => _openExamFile(fileName),
                             ),

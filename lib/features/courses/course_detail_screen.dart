@@ -4,6 +4,7 @@ import 'resourses/video_screen.dart';
 import 'resourses/notes_screen.dart';
 import 'resourses/books_screen.dart';
 import 'resourses/exames_screen.dart';
+import '../../core/constants/app_colors.dart';
 
 class CourseDetailScreen extends StatelessWidget {
   final Course course;
@@ -24,6 +25,7 @@ class CourseDetailScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.blue,
       ),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: SingleChildScrollView(
         // ✅ Make content scrollable
         child: Padding(
@@ -31,6 +33,7 @@ class CourseDetailScreen extends StatelessWidget {
           child: Column(
             children: [
               _buildCard(
+                context: context,
                 icon: Icons.ondemand_video,
                 iconColor: Colors.blue,
                 title: 'Videos',
@@ -45,6 +48,7 @@ class CourseDetailScreen extends StatelessWidget {
                 },
               ),
               _buildCard(
+                context: context,
                 icon: Icons.note,
                 iconColor: Colors.blue,
                 title: 'Lecture Notes',
@@ -59,6 +63,7 @@ class CourseDetailScreen extends StatelessWidget {
                 },
               ),
               _buildCard(
+                context: context,
                 icon: Icons.book,
                 iconColor: Colors.blue,
                 title: 'Books',
@@ -73,6 +78,7 @@ class CourseDetailScreen extends StatelessWidget {
                 },
               ),
               _buildCard(
+                context: context,
                 icon: Icons.assignment,
                 iconColor: Colors.blue,
                 title: 'Exams',
@@ -81,7 +87,10 @@ class CourseDetailScreen extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder:
-                          (context) => ExamsScreen(exams: course.examLinks, examUnits: const [],),
+                          (context) => ExamsScreen(
+                            exams: course.examLinks,
+                            examUnits: const [],
+                          ),
                     ),
                   );
                 },
@@ -95,6 +104,7 @@ class CourseDetailScreen extends StatelessWidget {
 
   /// 🔧 Helper method to reduce repetition
   Widget _buildCard({
+    required BuildContext context,
     required IconData icon,
     required Color iconColor,
     required String title,
@@ -113,7 +123,10 @@ class CourseDetailScreen extends StatelessWidget {
             leading: Icon(icon, color: iconColor),
             title: Text(
               title,
-              style: const TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: AppColors.getTextColor(context),
+              ),
             ),
             trailing: const Icon(Icons.arrow_forward_ios),
             onTap: onTap,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../features/department/department_selection_exit_exam_screen.dart';
+import '../../core/constants/app_colors.dart';
 
 class ExitExamScreen extends StatelessWidget {
   const ExitExamScreen({super.key});
@@ -16,18 +17,18 @@ class ExitExamScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.blue,
       ),
-      backgroundColor: const Color(0xFFF7FAFC),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               'Select Year of Exit Exam',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
-                color: Color(0xFF1E293B),
+                color: AppColors.getTextColor(context),
               ),
             ),
             const SizedBox(height: 24),
@@ -72,10 +73,10 @@ class ExitExamScreen extends StatelessWidget {
                             const SizedBox(width: 20),
                             Text(
                               'Year $year',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w600,
-                                color: Color(0xFF1E293B),
+                                color: AppColors.getTextColor(context),
                               ),
                             ),
                             const Spacer(),

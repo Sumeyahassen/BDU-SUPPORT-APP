@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../data/mock/mock_courses.dart';
+import '../core/constants/app_colors.dart';
 
 class DepartmentSelectionScreen extends StatelessWidget {
   const DepartmentSelectionScreen({super.key});
@@ -9,10 +10,10 @@ class DepartmentSelectionScreen extends StatelessWidget {
     final allCourses = [...mockCommonCourses, ...mockDepartmentCourses];
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Courses',style: TextStyle(color: Colors.white),),
+        title: const Text('Courses', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.blue,
       ),
-      backgroundColor: const Color(0xFFF7FAFC),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: ListView.builder(
         padding: const EdgeInsets.all(16),
         itemCount: allCourses.length,
@@ -31,15 +32,20 @@ class DepartmentSelectionScreen extends StatelessWidget {
               ),
               title: Text(
                 course.name,
-                style: const TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
-                  color: Color(0xFF1E293B),
+                  color: AppColors.getTextColor(context),
                 ),
               ),
               subtitle: Text(
-                mockCommonCourses.contains(course) ? 'Common Course' : 'Department-Specific',
-                style: const TextStyle(fontSize: 15, color: Colors.black54),
+                mockCommonCourses.contains(course)
+                    ? 'Common Course'
+                    : 'Department-Specific',
+                style: TextStyle(
+                  fontSize: 15,
+                  color: AppColors.getTextSecondaryColor(context),
+                ),
               ),
               onTap: () {
                 // TODO: Navigate to course detail screen

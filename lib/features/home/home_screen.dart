@@ -6,7 +6,9 @@ import 'package:bdu_exam_app/features/about/about_screen.dart'
     hide DepartmentSelectionScreen;
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final VoidCallback toggleTheme;
+
+  const HomeScreen({super.key, required this.toggleTheme});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -43,13 +45,21 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
           'BDU-SUPPORT-APP',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24,color: Colors.white),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
         ),
-        backgroundColor: Colors.blue,
+        actions: [
+          IconButton(
+            icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
+            tooltip: isDark ? 'Light Mode' : 'Dark Mode',
+            onPressed: widget.toggleTheme,
+          ),
+        ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -59,7 +69,10 @@ class _HomeScreenState extends State<HomeScreen>
               decoration: BoxDecoration(color: Colors.blue),
               child: Text(
                 'Menu',
-                style: TextStyle(color: Colors.white, fontSize: 24,fontWeight: FontWeight.bold),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
               ),
             ),
             ListTile(
@@ -68,18 +81,17 @@ class _HomeScreenState extends State<HomeScreen>
               onTap: () => Navigator.pop(context),
             ),
             ListTile(
-              leading: const Icon(Icons.school,color: Colors.blue,),
+              leading: const Icon(Icons.school, color: Colors.blue),
               title: const Text('Select Department'),
-              onTap:
-                  () => _navigate(context, const DepartmentSelectionScreen()),
+              onTap: () => _navigate(context, const DepartmentSelectionScreen()),
             ),
             ListTile(
-              leading: const Icon(Icons.menu_book,color: Colors.blue,),
+              leading: const Icon(Icons.menu_book, color: Colors.blue),
               title: const Text('Common Courses'),
               onTap: () => _navigate(context, const CourseListScreen()),
             ),
             ListTile(
-              leading: const Icon(Icons.school,color: Colors.blue,),
+              leading: const Icon(Icons.school, color: Colors.blue),
               title: const Text('Exit Exam'),
               onTap: () => _navigate(context, const ExitExamScreen()),
             ),
@@ -107,22 +119,19 @@ class _HomeScreenState extends State<HomeScreen>
                     const SizedBox(height: 20),
                     SlideTransition(
                       position: _animation,
-                      child: const Text(
+                      child: Text(
                         'Welcome to BDU-SUPPORT-APP',
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black,
+                          color: isDark ? Colors.white : Colors.black,
                         ),
                       ),
                     ),
                     const SizedBox(height: 16),
                     ElevatedButton(
-                      onPressed:
-                          () => _navigate(
-                            context,
-                            const DepartmentSelectionScreen(),
-                          ),
+                      onPressed: () =>
+                          _navigate(context, const DepartmentSelectionScreen()),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
                         minimumSize: const Size(200, 50),
@@ -137,8 +146,8 @@ class _HomeScreenState extends State<HomeScreen>
                     ),
                     const SizedBox(height: 16),
                     ElevatedButton(
-                      onPressed:
-                          () => _navigate(context, const CourseListScreen()),
+                      onPressed: () =>
+                          _navigate(context, const CourseListScreen()),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
                         minimumSize: const Size(200, 50),

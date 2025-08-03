@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bdu_exam_app/features/department/department_courses_screen.dart';
+import '../../core/constants/app_colors.dart';
 
 class DepartmentSelectionScreen extends StatelessWidget {
   const DepartmentSelectionScreen({super.key});
@@ -22,7 +23,7 @@ class DepartmentSelectionScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.blue,
       ),
-      backgroundColor: const Color(0xFFF7FAFC),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: ListView.builder(
         padding: const EdgeInsets.symmetric(vertical: 16),
         itemCount: departments.length,
@@ -45,10 +46,10 @@ class DepartmentSelectionScreen extends StatelessWidget {
                   ),
                   title: Text(
                     department['name'] as String,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
-                      color: Color(0xFF1E293B),
+                      color: AppColors.getTextColor(context),
                     ),
                   ),
                   onTap: () {

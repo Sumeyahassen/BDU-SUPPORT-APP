@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../features/exit_exam/exit_exam_year_department_screen.dart';
+import '../../core/constants/app_colors.dart';
 
 class DepartmentSelectionForExitExamScreen extends StatelessWidget {
   final int selectedYear;
@@ -20,12 +21,16 @@ class DepartmentSelectionForExitExamScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Select Department ($selectedYear)',
-          style: const  TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        title: Text(
+          'Select Department ($selectedYear)',
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         backgroundColor: Colors.blue,
       ),
-      backgroundColor: const Color(0xFFF7FAFC),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: ListView.builder(
         padding: const EdgeInsets.symmetric(vertical: 16),
         itemCount: departments.length,
@@ -45,10 +50,10 @@ class DepartmentSelectionForExitExamScreen extends StatelessWidget {
               ),
               title: Text(
                 department['name'] as String,
-                style: const TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
-                  color: Color(0xFF1E293B),
+                  color: AppColors.getTextColor(context),
                 ),
               ),
               onTap: () {

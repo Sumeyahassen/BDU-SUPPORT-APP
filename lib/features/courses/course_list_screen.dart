@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../data/mock/mock_courses.dart';
 import '../courses/course_detail_screen.dart';
+import '../../core/constants/app_colors.dart';
 
 class CourseListScreen extends StatefulWidget {
   const CourseListScreen({super.key});
@@ -26,7 +27,7 @@ class _CourseListScreenState extends State<CourseListScreen> {
         title: const Text('Common Courses' ,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
         backgroundColor: Colors.blue,
       ),
-      backgroundColor: const Color(0xFFF7FAFC),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: Column(
         children: [
           Padding(
@@ -40,7 +41,7 @@ class _CourseListScreenState extends State<CourseListScreen> {
                   borderSide: BorderSide.none,
                 ),
                 filled: true,
-                fillColor: Colors.white,
+                fillColor: AppColors.getCardColor(context),
                 contentPadding: const EdgeInsets.symmetric(
                   vertical: 0,
                   horizontal: 16,
@@ -104,10 +105,10 @@ class _CourseListScreenState extends State<CourseListScreen> {
                           Expanded(
                             child: Text(
                               course.name,
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20,
-                                color: Color(0xFF1E293B),
+                                color: AppColors.getTextColor(context),
                               ),
                             ),
                           ),

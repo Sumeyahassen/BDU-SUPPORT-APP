@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../data/models/course.dart';
 import '../../data/mock/mock_courses.dart';
 import '../courses/course_detail_screen.dart';
+import '../../core/constants/app_colors.dart';
 
 class DepartmentCoursesScreen extends StatelessWidget {
   final String departmentId;
@@ -31,7 +32,7 @@ class DepartmentCoursesScreen extends StatelessWidget {
         title: Text('$departmentName Courses',style:const TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
         backgroundColor: Colors.blue,
       ),
-      backgroundColor: const Color(0xFFF7FAFC),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: Column(
         children: [
           Padding(
@@ -43,10 +44,10 @@ class DepartmentCoursesScreen extends StatelessWidget {
                 const SizedBox(width: 16),
                 Text(
                   departmentName,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 26,
-                    color: Color(0xFF1E293B),
+                    color: AppColors.getTextColor(context),
                   ),
                 ),
               ],
@@ -78,10 +79,10 @@ class DepartmentCoursesScreen extends StatelessWidget {
                         ),
                         title: Text(
                           course.name,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
-                            color: Color(0xFF1E293B),
+                            color: AppColors.getTextColor(context),
                           ),
                         ),
                         onTap: () {

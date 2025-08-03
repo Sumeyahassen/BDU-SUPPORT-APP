@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../core/constants/app_colors.dart';
 
 class BooksScreen extends StatelessWidget {
   const BooksScreen({super.key, required List<String> books});
@@ -35,24 +36,33 @@ class BooksScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.blue,
       ),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          _buildSection("📘 Junior Level", juniorBooks),
-          _buildSection("📗 Intermediate Level", intermediateBooks),
-          _buildSection("📙 Advanced Level", advancedBooks),
+          _buildSection(context, "📘 Junior Level", juniorBooks),
+          _buildSection(context, "📗 Intermediate Level", intermediateBooks),
+          _buildSection(context, "📙 Advanced Level", advancedBooks),
         ],
       ),
     );
   }
 
-  Widget _buildSection(String levelTitle, List<Map<String, String>> books) {
+  Widget _buildSection(
+    BuildContext context,
+    String levelTitle,
+    List<Map<String, String>> books,
+  ) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           levelTitle,
-          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: AppColors.getTextColor(context),
+          ),
         ),
         const SizedBox(height: 10),
         ...books.map(
@@ -63,8 +73,16 @@ class BooksScreen extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             child: ListTile(
-              title: Text(book['title'] ?? ''),
-              subtitle: Text(book['desc'] ?? ''),
+              title: Text(
+                book['title'] ?? '',
+                style: TextStyle(color: AppColors.getTextColor(context)),
+              ),
+              subtitle: Text(
+                book['desc'] ?? '',
+                style: TextStyle(
+                  color: AppColors.getTextSecondaryColor(context),
+                ),
+              ),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [

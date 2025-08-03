@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../data/mock/mock_departments.dart';
+import '../../core/constants/app_colors.dart';
 
 final Map<String, IconData> departmentIcons = {
   'Software Engineering': Icons.code,
@@ -23,7 +24,7 @@ class DepartmentSelectionScreen extends StatelessWidget {
         backgroundColor: const Color(0xFF2563EB), // Matches your blue
         leading: const BackButton(color: Colors.white),
       ),
-      backgroundColor: const Color(0xFFF7FAFC), // Light background
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: GridView.builder(
@@ -46,7 +47,7 @@ class DepartmentSelectionScreen extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(18),
                 ),
-                color: Colors.white,
+                color: AppColors.getCardColor(context),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -66,10 +67,10 @@ class DepartmentSelectionScreen extends StatelessWidget {
                     Text(
                       department.name,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.w700,
-                        color: Color(0xFF1E293B),
+                        color: AppColors.getTextColor(context),
                       ),
                     ),
                   ],
@@ -96,6 +97,7 @@ class AboutScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.blue,
       ),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
@@ -116,34 +118,46 @@ class AboutScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 12),
-                const Text(
+                Text(
                   'Version 1.0.0',
-                  style: TextStyle(fontSize: 16, color: Colors.black54),
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: AppColors.getTextSecondaryColor(context),
+                  ),
                 ),
                 const SizedBox(height: 24),
-                const Text(
+                Text(
                   'BDU-SUPPORT-APP is a comprehensive digital companion for students of Bahir Dar University\'s Computing Faculty. It centralizes access to vital learning resources, including common and department-specific course materials, exam preparations, supportive video tutorials, and project samples.',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 16),
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: AppColors.getTextColor(context),
+                  ),
                 ),
                 const SizedBox(height: 32),
-                const Divider(),
+                Divider(color: AppColors.getTextSecondaryColor(context)),
                 const SizedBox(height: 16),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.code, color: Colors.blue),
-                    SizedBox(width: 8),
+                    const Icon(Icons.code, color: Colors.blue),
+                    const SizedBox(width: 8),
                     Text(
                       'Developed by Sumeya Hassen',
-                      style: TextStyle(fontSize: 16, color: Colors.black87),
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: AppColors.getTextColor(context),
+                      ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 8),
-                const Text(
+                Text(
                   '© 2025 Bahir Dar University',
-                  style: TextStyle(fontSize: 14, color: Colors.black45),
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: AppColors.getTextSecondaryColor(context),
+                  ),
                 ),
               ],
             ),

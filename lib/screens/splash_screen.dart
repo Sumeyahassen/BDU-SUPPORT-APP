@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../data/mock/mock_courses.dart';
+import '../core/constants/app_colors.dart';
 
 class CourseListScreen extends StatelessWidget {
   const CourseListScreen({super.key});
@@ -16,7 +17,7 @@ class CourseListScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.blue,
       ),
-      backgroundColor: const Color(0xFFF7FAFC),
+      backgroundColor: AppColors.getBackgroundColor(context),
       body: ListView.builder(
         padding: const EdgeInsets.symmetric(vertical: 16),
         itemCount: commonCourses.length,
@@ -36,10 +37,10 @@ class CourseListScreen extends StatelessWidget {
               ),
               title: Text(
                 course.name,
-                style: const TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
-                  color: Color(0xFF1E293B),
+                  color: AppColors.getTextColor(context),
                 ),
               ),
               onTap: () {
