@@ -13,7 +13,7 @@ plugins {
 
     defaultConfig {
         applicationId = "com.example.bdu_exam_app"
-        minSdk = 21
+        minSdk = flutter.minSdkVersion
         targetSdk = 35          // ← upgrade from 34 to 35
         versionCode = 1
         versionName = "1.0"

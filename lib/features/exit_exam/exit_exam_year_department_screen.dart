@@ -33,9 +33,10 @@ class _ExitExamYearDepartmentScreenState
     Future.delayed(const Duration(seconds: 2), () {
       setState(() {
         _examFiles = [
-          'BDU Exit Exam.pdf',
           'AAU Exit Exam.pdf',
+          'AATU Exit Exam.pdf',
           'ASTU Exit Exam.pdf',
+          'BDU Exit Exam.pdf',
           'JU Exit Exam.pdf',
         ];
         _isLoading = false;
@@ -53,11 +54,14 @@ class _ExitExamYearDepartmentScreenState
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    
+
     return Scaffold(
       backgroundColor: AppColors.getBackgroundColor(context),
       appBar: AppBar(
-        title: Text('Exit Exam ${widget.year} - ${widget.departmentName}',style:const TextStyle(color: Colors.white),),
+        title: Text(
+          'Exit Exam ${widget.year} - ${widget.departmentName}',
+          style: const TextStyle(color: Colors.white),
+        ),
         backgroundColor: _appBarColor,
       ),
       body: SafeArea(
@@ -84,7 +88,10 @@ class _ExitExamYearDepartmentScreenState
                       : _examFiles.isEmpty
                       ? Text(
                         'No exam files available.',
-                        style: TextStyle(fontSize: 18, color: AppColors.getTextSecondaryColor(context)),
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: AppColors.getTextSecondaryColor(context),
+                        ),
                         textAlign: TextAlign.center,
                       )
                       : ListView.separated(

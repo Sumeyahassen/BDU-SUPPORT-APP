@@ -14,10 +14,11 @@ dependencies:
   cupertino_icons: ^1.0.8
   url_launcher: ^6.2.5 # ✅ Correctly added here
   marquee: ^2.2.3
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:
-    sdk: flutter  
+    sdk: flutter
   flutter_lints: ^3.0.1 # Updated version (if you want, or keep yours)
 
 flutter:
@@ -27,4 +28,3 @@ flutter:
     - assets/images/sumeya.png
 # pubspec.yaml
 
-  

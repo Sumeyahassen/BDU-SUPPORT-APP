@@ -26,7 +26,7 @@ class _BduSupportAppState extends State<BduSupportApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BDU-SUPPORT-APP',
+      title: 'YeCampusHub',
       themeMode: _themeMode,
       theme: ThemeData(
         brightness: Brightness.light,
@@ -38,7 +38,7 @@ class _BduSupportAppState extends State<BduSupportApp> {
           foregroundColor: Colors.white,
           elevation: 0,
         ),
-        cardTheme: CardTheme(
+        cardTheme: CardThemeData(
           color: AppColors.lightCard,
           elevation: 2,
           shape: RoundedRectangleBorder(
@@ -61,7 +61,7 @@ class _BduSupportAppState extends State<BduSupportApp> {
           foregroundColor: Colors.white,
           elevation: 0,
         ),
-        cardTheme: CardTheme(
+        cardTheme: CardThemeData(
           color: AppColors.darkCard,
           elevation: 2,
           shape: RoundedRectangleBorder(

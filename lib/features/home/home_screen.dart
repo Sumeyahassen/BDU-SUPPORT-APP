@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen>
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'BDU-SUPPORT-APP',
+          'YeCampusHub',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
         ),
         actions: [
@@ -115,12 +115,21 @@ class _HomeScreenState extends State<HomeScreen>
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset("assets/images/bdu.png", height: 150),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(
+                        10,
+                      ), // rounded corners
+                      child: Image.asset(
+                        "assets/images/bdu.png",
+                        height: 150,
+                        fit: BoxFit.cover, // optional: makes image fill nicely
+                      ),
+                    ),
                     const SizedBox(height: 20),
                     SlideTransition(
                       position: _animation,
                       child: Text(
-                        'Welcome to BDU-SUPPORT-APP',
+                        'Welcome to YeCampusHub ',
                         style: TextStyle(
                           fontSize: 22,
                           fontWeight: FontWeight.bold,

@@ -109,7 +109,7 @@ class AboutScreen extends StatelessWidget {
                 Image.asset("assets/images/sumeya.png", height: 150),
                 const SizedBox(height: 20),
                 const Text(
-                  'BDU-SUPPORT-APP',
+                  'YeCampusHub',
                   style: TextStyle(
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
@@ -127,7 +127,7 @@ class AboutScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 Text(
-                  'BDU-SUPPORT-APP is a comprehensive digital companion for students of Bahir Dar University\'s Computing Faculty. It centralizes access to vital learning resources, including common and department-specific course materials, exam preparations, supportive video tutorials, and project samples.',
+                  'YeCampusHubis a comprehensive digital companion for students Ethiopia University\'s Computing Faculty. It centralizes access to vital learning resources, including common and department-specific course materials, exam preparations, supportive video tutorials, and project samples.',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
