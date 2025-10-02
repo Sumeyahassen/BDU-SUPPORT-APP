@@ -1,0 +1,42 @@
+version: "3.9"
+services:
+  mongo:
+    image: mongo:6
+    container_name: bdu_mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: bdu_backend
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/bdu_support_app
+      - NODE_ENV=production
+      - PORT=5000
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+
+  seed:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: bdu_seed
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/bdu_support_app
+      - NODE_ENV=production
+    command: ["node", "seed.js"]
+    restart: "no"
+
+volumes:
+  mongo_data:
+

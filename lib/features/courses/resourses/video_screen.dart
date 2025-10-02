@@ -1,31 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
+import '../../../utils/url_launcher_helper.dart';
 import '../../../core/constants/app_colors.dart';
 
 class VideoScreen extends StatelessWidget {
-  final Map<String, String> unitVideos = {
-    'Unit 1: ': '',
-    'Unit 2: ': '',
-    'Unit 3: ': '',
-    'Unit 4: ': '',
-    'Unit 5: ': '',
-  };
-
-  VideoScreen({super.key, required List<String> videos});
-
-  // Function to open a YouTube URL
-  void _launchYouTubeURL(String url) async {
-    final Uri uri = Uri.parse(url);
-    if (await canLaunchUrl(uri)) {
-      await launchUrl(uri, mode: LaunchMode.externalApplication);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
+  final List<Map<String, dynamic>> resources; // pass filtered videos
+  const VideoScreen({super.key, required this.resources});
 
   @override
   Widget build(BuildContext context) {
-    final unitList = unitVideos.entries.toList();
+    final items = resources;
 
     return Scaffold(
       appBar: AppBar(
@@ -41,10 +24,11 @@ class VideoScreen extends StatelessWidget {
       ),
       backgroundColor: AppColors.getBackgroundColor(context),
       body: ListView.builder(
-        itemCount: unitList.length,
+        itemCount: items.length,
         itemBuilder: (context, index) {
-          final unitName = unitList[index].key;
-          final videoUrl = unitList[index].value;
+          final r = items[index];
+          final title = r['title'] ?? 'Video';
+          final url = r['videoUrl'] ?? r['link'];
 
           return Card(
             margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
@@ -55,7 +39,7 @@ class VideoScreen extends StatelessWidget {
             child: ListTile(
               contentPadding: const EdgeInsets.all(16),
               title: Text(
-                unitName,
+                title,
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w600,
@@ -67,7 +51,7 @@ class VideoScreen extends StatelessWidget {
                 color: Colors.blue,
                 size: 32,
               ),
-              onTap: () => _launchYouTubeURL(videoUrl),
+              onTap: () => UrlLauncherHelper.openUrl(url),
             ),
           );
         },

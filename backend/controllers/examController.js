@@ -5,11 +5,17 @@ const Exam = require("../models/Exam");
 const uploadExam = async (req, res) => {
   try {
     const newExam = new Exam({
-      courseId: req.body.courseId,
+      course: req.body.course || req.body.courseId, // Expect ObjectId string
       year: req.body.year,
-      type: req.body.type, // "mid" or "final"
+      type: req.body.type, // "mid" | "final" | "quiz" | "assignment"
+      title: req.body.title,
+      description: req.body.description,
       fileUrl:
         req.body.fileUrl || (req.file ? `/uploads/${req.file.filename}` : null),
+      semester: req.body.semester,
+      duration: req.body.duration,
+      totalMarks: req.body.totalMarks,
+      tags: req.body.tags || []
     });
 
     const savedExam = await newExam.save();
@@ -19,14 +25,24 @@ const uploadExam = async (req, res) => {
   }
 };
 
-// Get exams by courseId
+// Get exams by course (ObjectId)
 const getExams = async (req, res) => {
   try {
-    const exams = await Exam.find({ courseId: req.params.courseId });
-    res.json(exams);
+    const exams = await Exam.find({ course: req.params.courseId });
+    res.json({ data: exams });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 };
 
-module.exports = { uploadExam, getExams };
+// Get all exams
+const getAllExams = async (_req, res) => {
+  try {
+    const exams = await Exam.find({});
+    res.json({ data: exams });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+module.exports = { uploadExam, getExams, getAllExams };

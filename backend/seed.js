@@ -84,6 +84,7 @@ async function seed() {
 
   const { commonCourses, departmentCourses } = buildCoursesFromFrontend();
   const coursePayloads = [];
+  const usedCodes = new Set();
 
   for (const c of commonCourses) {
     coursePayloads.push({
@@ -93,14 +94,22 @@ async function seed() {
       description: c.name,
       credits: 3
     });
+    usedCodes.add(c.code);
   }
 
   for (const c of departmentCourses) {
     const departmentId = codeToDeptId.get(c.departmentCode);
     if (!departmentId) continue;
+    // Ensure unique course code across all courses
+    let uniqueCode = c.code;
+    if (usedCodes.has(uniqueCode)) {
+      uniqueCode = `${c.departmentCode}_${c.code}`;
+    }
+    usedCodes.add(uniqueCode);
+
     coursePayloads.push({
       name: c.name,
-      code: c.code,
+      code: uniqueCode,
       department: departmentId,
       isCommon: false,
       description: c.name,

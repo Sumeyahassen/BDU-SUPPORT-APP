@@ -1,0 +1,37 @@
+{
+  "courses": [
+    {
+      "courseCode": "db",
+      "resources": [
+        { "type": "video", "title": "Database Systems Full Course", "videoUrl": "https://REPLACE_WITH_YOUTUBE_FULL_COURSE_URL", "tags": ["dbms", "course"] },
+        { "type": "video", "title": "Normalization in DBMS", "videoUrl": "https://REPLACE_WITH_YOUTUBE_NORMALIZATION_URL", "tags": ["normalization", "dbms"] },
+        { "type": "note", "title": "Tutorialspoint DBMS", "link": "https://REPLACE_WITH_TUTORIALSPOINT_DBMS_URL", "tags": ["tutorial", "dbms"] },
+        { "type": "note", "title": "GeeksforGeeks DBMS", "link": "https://REPLACE_WITH_GFG_DBMS_URL", "tags": ["reference", "dbms"] },
+        { "type": "exam", "title": "DBMS Previous Year Questions (PDF)", "fileUrl": "https://REPLACE_WITH_QUESTIONS_PDF_URL", "tags": ["exam", "questions"] },
+        { "type": "book", "title": "Database System Concepts – Silberschatz (official site)", "link": "https://REPLACE_WITH_SILBERSCHATZ_OFFICIAL_SITE_URL", "tags": ["book", "reference"] },
+        { "type": "book", "title": "Learn DBMS Free eBook", "fileUrl": "https://REPLACE_WITH_LEGAL_FREE_EBOOK_URL", "tags": ["book", "free"] }
+      ]
+    },
+    { "courseCode": "cpp", "resources": [] },
+    { "courseCode": "java", "resources": [] },
+    { "courseCode": "coa", "resources": [] },
+    { "courseCode": "mpa", "resources": [] },
+    { "courseCode": "os", "resources": [] },
+    { "courseCode": "net", "resources": [] },
+    { "courseCode": "ds", "resources": [] },
+    { "courseCode": "cloud", "resources": [] },
+    { "courseCode": "web", "resources": [] },
+    { "courseCode": "mobile", "resources": [] },
+    { "courseCode": "ai", "resources": [] },
+    { "courseCode": "oose", "resources": [] },
+    { "courseCode": "sw_req", "resources": [] },
+    { "courseCode": "ds_algo", "resources": [] },
+    { "courseCode": "network_admin", "resources": [] },
+    { "courseCode": "erp", "resources": [] },
+    { "courseCode": "bpm", "resources": [] },
+    { "courseCode": "netsec", "resources": [] },
+    { "courseCode": "crypto", "resources": [] }
+  ]
+}
+
+

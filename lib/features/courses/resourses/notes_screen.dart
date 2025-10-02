@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../utils/url_launcher_helper.dart';
 
 class NotesScreen extends StatelessWidget {
-  const NotesScreen({Key? key, required List<String> notes}) : super(key: key);
-
-  final List<String> units = const [
-    'Unit 1: Introduction',
-    'Unit 2: Basics',
-    'Unit 3: Advanced Concepts',
-    'Unit 4: Case Studies',
-    'Unit 5: Final Review',
-  ];
+  final List<Map<String, dynamic>> resources; // pass filtered notes
+  const NotesScreen({Key? key, required this.resources}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,13 +22,16 @@ class NotesScreen extends StatelessWidget {
       ),
       backgroundColor: AppColors.getBackgroundColor(context),
       body: ListView.builder(
-        itemCount: units.length,
+        itemCount: resources.length,
         itemBuilder: (context, index) {
+          final r = resources[index];
+          final title = r['title'] ?? 'Note';
+          final url = r['fileUrl'] ?? r['link'];
           return Card(
             margin: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
             child: ListTile(
               title: Text(
-                units[index],
+                title,
                 style: TextStyle(color: AppColors.getTextColor(context)),
               ),
               trailing: Row(
@@ -42,21 +39,11 @@ class NotesScreen extends StatelessWidget {
                 children: [
                   IconButton(
                     icon: const Icon(Icons.visibility, color: Colors.green),
-                    onPressed: () {
-                      // TODO: Add view logic here
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Viewing ${units[index]}')),
-                      );
-                    },
+                    onPressed: () => UrlLauncherHelper.openUrl(url),
                   ),
                   IconButton(
                     icon: const Icon(Icons.download, color: Colors.blue),
-                    onPressed: () {
-                      // TODO: Add download logic here
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Downloading ${units[index]}')),
-                      );
-                    },
+                    onPressed: () => UrlLauncherHelper.openUrl(url),
                   ),
                 ],
               ),

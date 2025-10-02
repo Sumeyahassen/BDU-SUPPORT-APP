@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../core/constants/app_colors.dart';
+import '../../../utils/url_launcher_helper.dart';
 
 class BooksScreen extends StatelessWidget {
-  const BooksScreen({super.key, required List<String> books});
+  final List<Map<String, dynamic>> resources; // pass filtered books
+  const BooksScreen({super.key, required this.resources});
 
   @override
   Widget build(BuildContext context) {
@@ -37,74 +39,34 @@ class BooksScreen extends StatelessWidget {
         backgroundColor: Colors.blue,
       ),
       backgroundColor: AppColors.getBackgroundColor(context),
-      body: ListView(
+      body: ListView.builder(
         padding: const EdgeInsets.all(16),
-        children: [
-          _buildSection(context, "📘 Junior Level", juniorBooks),
-          _buildSection(context, "📗 Intermediate Level", intermediateBooks),
-          _buildSection(context, "📙 Advanced Level", advancedBooks),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildSection(
-    BuildContext context,
-    String levelTitle,
-    List<Map<String, String>> books,
-  ) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          levelTitle,
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: AppColors.getTextColor(context),
-          ),
-        ),
-        const SizedBox(height: 10),
-        ...books.map(
-          (book) => Card(
+        itemCount: resources.length,
+        itemBuilder: (context, index) {
+          final r = resources[index];
+          final title = r['title'] ?? 'Book';
+          final desc = (r['author'] ?? '') as String;
+          final url = r['fileUrl'] ?? r['link'];
+          return Card(
             margin: const EdgeInsets.symmetric(vertical: 8),
             elevation: 4,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
             child: ListTile(
-              title: Text(
-                book['title'] ?? '',
-                style: TextStyle(color: AppColors.getTextColor(context)),
-              ),
-              subtitle: Text(
-                book['desc'] ?? '',
-                style: TextStyle(
-                  color: AppColors.getTextSecondaryColor(context),
-                ),
-              ),
+              title: Text(title, style: TextStyle(color: AppColors.getTextColor(context))),
+              subtitle: Text(desc, style: TextStyle(color: AppColors.getTextSecondaryColor(context))),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  IconButton(
-                    icon: const Icon(Icons.visibility, color: Colors.blue),
-                    onPressed: () {
-                      // Add your View logic here
-                    },
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.download, color: Colors.green),
-                    onPressed: () {
-                      // Add your Download logic here
-                    },
-                  ),
+                  IconButton(icon: const Icon(Icons.visibility, color: Colors.blue), onPressed: () => UrlLauncherHelper.openUrl(url)),
+                  IconButton(icon: const Icon(Icons.download, color: Colors.green), onPressed: () => UrlLauncherHelper.openUrl(url)),
                 ],
               ),
             ),
-          ),
-        ),
-        const SizedBox(height: 20),
-      ],
+          );
+        },
+      ),
     );
   }
 }
