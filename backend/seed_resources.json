@@ -3,34 +3,181 @@
     {
       "courseCode": "db",
       "resources": [
-        { "type": "video", "title": "Database Systems Full Course", "videoUrl": "https://REPLACE_WITH_YOUTUBE_FULL_COURSE_URL", "tags": ["dbms", "course"] },
-        { "type": "video", "title": "Normalization in DBMS", "videoUrl": "https://REPLACE_WITH_YOUTUBE_NORMALIZATION_URL", "tags": ["normalization", "dbms"] },
-        { "type": "note", "title": "Tutorialspoint DBMS", "link": "https://REPLACE_WITH_TUTORIALSPOINT_DBMS_URL", "tags": ["tutorial", "dbms"] },
-        { "type": "note", "title": "GeeksforGeeks DBMS", "link": "https://REPLACE_WITH_GFG_DBMS_URL", "tags": ["reference", "dbms"] },
-        { "type": "exam", "title": "DBMS Previous Year Questions (PDF)", "fileUrl": "https://REPLACE_WITH_QUESTIONS_PDF_URL", "tags": ["exam", "questions"] },
-        { "type": "book", "title": "Database System Concepts – Silberschatz (official site)", "link": "https://REPLACE_WITH_SILBERSCHATZ_OFFICIAL_SITE_URL", "tags": ["book", "reference"] },
-        { "type": "book", "title": "Learn DBMS Free eBook", "fileUrl": "https://REPLACE_WITH_LEGAL_FREE_EBOOK_URL", "tags": ["book", "free"] }
+        { "type": "lecture", "title": "Database Systems Lecture Notes", "fileUrl": "https://www.geeksforgeeks.org/introduction-of-dbms-database-management-system-set-1/", "tags": ["lecture", "notes"] },
+        { "type": "lecture", "title": "DBMS Course Slides", "fileUrl": "https://www.javatpoint.com/dbms-tutorial", "tags": ["lecture", "slides"] },
+        { "type": "video", "title": "Database Systems Full Course", "videoUrl": "https://youtu.be/-8bYtApJNos?si=83uijNdKJ-1ZKdTY", "tags": ["dbms", "course"] },
+        { "type": "video", "title": "Normalization in DBMS", "videoUrl": "https://www.youtube.com/watch?v=GFQaEYEc8_8", "tags": ["normalization", "dbms"] },
+        { "type": "note", "title": "Tutorialspoint DBMS", "link": "https://www.tutorialspoint.com/dbms/index.htm", "tags": ["tutorial", "dbms"] },
+        { "type": "note", "title": "GeeksforGeeks DBMS", "link": "https://www.geeksforgeeks.org/dbms/", "tags": ["reference", "dbms"] },
+        { "type": "exam", "title": "DBMS Practice Questions", "fileUrl": "https://www.geeksforgeeks.org/dbms-gq/", "tags": ["exam", "questions"] },
+        { "type": "book", "title": "Database System Concepts – Silberschatz", "link": "https://www.db-book.com/", "tags": ["book", "reference"] },
+        { "type": "book", "title": "Learn DBMS Free", "fileUrl": "https://www.w3schools.in/dbms/", "tags": ["book", "free"] }
       ]
     },
-    { "courseCode": "cpp", "resources": [] },
-    { "courseCode": "java", "resources": [] },
-    { "courseCode": "coa", "resources": [] },
-    { "courseCode": "mpa", "resources": [] },
-    { "courseCode": "os", "resources": [] },
-    { "courseCode": "net", "resources": [] },
-    { "courseCode": "ds", "resources": [] },
-    { "courseCode": "cloud", "resources": [] },
-    { "courseCode": "web", "resources": [] },
-    { "courseCode": "mobile", "resources": [] },
-    { "courseCode": "ai", "resources": [] },
-    { "courseCode": "oose", "resources": [] },
-    { "courseCode": "sw_req", "resources": [] },
-    { "courseCode": "ds_algo", "resources": [] },
-    { "courseCode": "network_admin", "resources": [] },
-    { "courseCode": "erp", "resources": [] },
-    { "courseCode": "bpm", "resources": [] },
-    { "courseCode": "netsec", "resources": [] },
-    { "courseCode": "crypto", "resources": [] }
+    { "courseCode": "cpp", "resources": [
+      { "type": "lecture", "title": "C++ Programming Lecture Notes", "fileUrl": "https://www.geeksforgeeks.org/c-plus-plus/", "tags": ["lecture", "notes", "cpp"] },
+      { "type": "lecture", "title": "C++ Programming Course Slides", "fileUrl": "https://www.w3schools.com/cpp/", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "C++ Full Course for Beginners", "videoUrl": "https://www.youtube.com/watch?v=vLnPwxZdW4Y", "tags": ["cpp", "beginner", "course"] },
+      { "type": "video", "title": "C++ Object-Oriented Programming", "videoUrl": "https://www.youtube.com/watch?v=wN0x9eZLix4", "tags": ["oop", "cpp"] },
+      { "type": "note", "title": "GeeksforGeeks C++ Tutorial", "link": "https://www.geeksforgeeks.org/cplusplus/", "tags": ["tutorial", "reference"] },
+      { "type": "note", "title": "cplusplus.com Reference", "link": "https://cplusplus.com/", "tags": ["reference", "documentation"] },
+      { "type": "book", "title": "The C++ Programming Language - Bjarne Stroustrup", "link": "https://www.stroustrup.com/", "tags": ["book", "reference"] },
+      { "type": "exam", "title": "C++ Practice Problems", "fileUrl": "https://www.hackerrank.com/domains/cpp", "tags": ["exam", "practice"] }
+    ] },
+    { "courseCode": "java", "resources": [
+      { "type": "lecture", "title": "Java Programming Lecture Notes", "fileUrl": "https://www.geeksforgeeks.org/java/", "tags": ["lecture", "notes", "java"] },
+      { "type": "lecture", "title": "Java Programming Course Slides", "fileUrl": "https://www.w3schools.com/java/", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Java Programming Full Course", "videoUrl": "https://www.youtube.com/watch?v=eIrMbAQSU34", "tags": ["java", "course", "beginner"] },
+      { "type": "video", "title": "Java OOP Concepts", "videoUrl": "https://www.youtube.com/watch?v=BUAfsXiC_vE", "tags": ["java", "oop", "concepts"] },
+      { "type": "note", "title": "Oracle Java Documentation", "link": "https://docs.oracle.com/javase/tutorial/", "tags": ["documentation", "official"] },
+      { "type": "note", "title": "W3Schools Java Tutorial", "link": "https://www.w3schools.com/java/", "tags": ["tutorial", "reference"] },
+      { "type": "book", "title": "Effective Java - Joshua Bloch", "link": "https://www.oracle.com/java/technologies/javase/effective-java.html", "tags": ["book", "best-practices"] },
+      { "type": "exam", "title": "Java Coding Practice", "fileUrl": "https://www.hackerrank.com/domains/java", "tags": ["exam", "practice"] }
+    ] },
+    { "courseCode": "coa", "resources": [
+      { "type": "lecture", "title": "COA Lecture Notes", "fileUrl": "https://https://www.geeksforgeeks.org/computer-organization-and-architecture/", "tags": ["lecture", "notes", "coa"] },
+      { "type": "lecture", "title": "COA Course Slides", "fileUrl": "https://https://www.javatpoint.com/computer-organization-and-architecture", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Computer Organization and Architecture", "videoUrl": "https://www.youtube.com/watch?v=AjBT1u3Hj7k", "tags": ["coa", "course"] },
+      { "type": "note", "title": "GeeksforGeeks COA", "link": "https://www.geeksforgeeks.org/computer-organization-and-architecture/", "tags": ["tutorial", "reference"] },
+      { "type": "book", "title": "Computer Organization and Design", "link": "https://booksite.elsevier.com/9780124077263/", "tags": ["book", "textbook"] },
+      { "type": "exam", "title": "COA Practice Questions", "link": "https://www.geeksforgeeks.org/computer-organization-and-architecture/", "tags": ["exam", "practice"] }
+    ] },
+    { "courseCode": "mpa", "resources": [
+      { "type": "lecture", "title": "Microprocessor Lecture Notes", "fileUrl": "https://https://www.geeksforgeeks.org/microprocessor/", "tags": ["lecture", "notes", "mpa"] },
+      { "type": "lecture", "title": "MPA Course Slides", "fileUrl": "https://https://www.tutorialspoint.com/microprocessor/index.htm", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Microprocessor and Assembly Language", "videoUrl": "https://www.youtube.com/watch?v=cp9iKENsxJo", "tags": ["microprocessor", "course"] },
+      { "type": "note", "title": "GeeksforGeeks Microprocessor", "link": "https://www.geeksforgeeks.org/microprocessor/", "tags": ["tutorial", "reference"] },
+      { "type": "book", "title": "The Intel Microprocessors", "link": "https://www.pearson.com/us/higher-education.html", "tags": ["book", "textbook"] },
+      { "type": "exam", "title": "Microprocessor Practice", "link": "https://www.geeksforgeeks.org/microprocessor/", "tags": ["exam", "practice"] }
+    ] },
+    { "courseCode": "os", "resources": [
+      { "type": "lecture", "title": "Operating System Lecture Notes", "fileUrl": "https://https://www.geeksforgeeks.org/operating-systems/", "tags": ["lecture", "notes", "os"] },
+      { "type": "lecture", "title": "OS Course Slides", "fileUrl": "https://https://www.tutorialspoint.com/operating_system/index.htm", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Operating System Full Course", "videoUrl": "https://www.youtube.com/watch?v=vBURTtXv3nA", "tags": ["os", "course"] },
+      { "type": "video", "title": "Process Scheduling Algorithms", "videoUrl": "https://www.youtube.com/watch?v=EWk8lHn-my4", "tags": ["scheduling", "algorithms"] },
+      { "type": "note", "title": "Tutorialspoint Operating System", "link": "https://www.tutorialspoint.com/operating_system/index.htm", "tags": ["tutorial", "reference"] },
+      { "type": "note", "title": "GeeksforGeeks Operating Systems", "link": "https://www.geeksforgeeks.org/operating-systems/", "tags": ["reference", "articles"] },
+      { "type": "book", "title": "Operating System Concepts - Silberschatz", "link": "https://www.os-book.com/", "tags": ["book", "textbook"] },
+      { "type": "exam", "title": "OS Practice Questions", "fileUrl": "https://www.geeksforgeeks.org/operating-systems/", "tags": ["exam", "practice"] }
+    ] },
+    { "courseCode": "net", "resources": [
+      { "type": "lecture", "title": "Networking Lecture Notes", "fileUrl": "https://https://www.geeksforgeeks.org/computer-networks/", "tags": ["lecture", "notes", "net"] },
+      { "type": "lecture", "title": "Networking Course Slides", "fileUrl": "https://https://www.tutorialspoint.com/data_communication_computer_network/index.htm", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Computer Networking Full Course", "videoUrl": "https://www.youtube.com/watch?v=3QhU9jd3aEA", "tags": ["networking", "course"] },
+      { "type": "note", "title": "GeeksforGeeks Computer Networks", "link": "https://www.geeksforgeeks.org/computer-networks/", "tags": ["tutorial", "reference"] },
+      { "type": "book", "title": "Computer Networks - Tanenbaum", "link": "https://catalog.hathitrust.org/Record/000446064", "tags": ["book", "textbook"] },
+      { "type": "exam", "title": "Networking Practice", "link": "https://www.geeksforgeeks.org/computer-networks/", "tags": ["exam", "practice"] }
+    ] },
+    { "courseCode": "ds", "resources": [
+      { "type": "lecture", "title": "Distributed Systems Lecture Notes", "fileUrl": "https://https://www.geeksforgeeks.org/distributed-systems/", "tags": ["lecture", "notes", "ds"] },
+      { "type": "lecture", "title": "DS Course Slides", "fileUrl": "https://https://www.tutorialspoint.com/distributed_system/index.htm", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Distributed Systems", "videoUrl": "https://www.youtube.com/watch?v=Y6Ev8GXb-rM", "tags": ["distributed", "course"] },
+      { "type": "note", "title": "Distributed Systems Concepts", "link": "https://www.geeksforgeeks.org/distributed-systems/", "tags": ["tutorial", "reference"] },
+      { "type": "book", "title": "Distributed Systems", "link": "https://www.distributed-systems.net/index.html", "tags": ["book", "textbook"] },
+      { "type": "exam", "title": "Distributed Systems Practice", "link": "https://www.geeksforgeeks.org/distributed-systems/", "tags": ["exam", "practice"] }
+    ] },
+    { "courseCode": "cloud", "resources": [
+      { "type": "lecture", "title": "Cloud Computing Lecture Notes", "fileUrl": "https://https://www.geeksforgeeks.org/cloud-computing/", "tags": ["lecture", "notes", "cloud"] },
+      { "type": "lecture", "title": "Cloud Course Slides", "fileUrl": "https://https://www.javatpoint.com/cloud-computing-tutorial", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Cloud Computing Course", "videoUrl": "https://www.youtube.com/watch?v=M988_fsOSWo", "tags": ["cloud", "course"] },
+      { "type": "note", "title": "GeeksforGeeks Cloud Computing", "link": "https://www.geeksforgeeks.org/cloud-computing/", "tags": ["tutorial", "reference"] },
+      { "type": "book", "title": "Cloud Computing Handbook", "link": "https://aws.amazon.com/what-is-cloud-computing/", "tags": ["book", "aws"] },
+      { "type": "exam", "title": "Cloud Computing Practice", "link": "https://www.geeksforgeeks.org/cloud-computing/", "tags": ["exam", "practice"] }
+    ] },
+    { "courseCode": "web", "resources": [
+      { "type": "lecture", "title": "Web Development Lecture Notes", "fileUrl": "https://https://www.geeksforgeeks.org/web-development/", "tags": ["lecture", "notes", "web"] },
+      { "type": "lecture", "title": "Web Dev Course Slides", "fileUrl": "https://https://developer.mozilla.org/en-US/docs/Learn", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Web Development Full Course", "videoUrl": "https://www.youtube.com/watch?v=zJSY8tbf_ys", "tags": ["webdev", "course"] },
+      { "type": "video", "title": "React.js Tutorial", "videoUrl": "https://www.youtube.com/watch?v=DLX62G4lc44", "tags": ["react", "javascript"] },
+      { "type": "note", "title": "MDN Web Docs", "link": "https://developer.mozilla.org/", "tags": ["documentation", "reference"] },
+      { "type": "note", "title": "freeCodeCamp Web Development", "link": "https://www.freecodecamp.org/learn/2022/responsive-web-design/", "tags": ["tutorial", "course"] },
+      { "type": "book", "title": "Eloquent JavaScript", "link": "https://eloquentjavascript.net/", "tags": ["book", "javascript"] },
+      { "type": "exam", "title": "Web Development Projects", "link": "https://www.frontendmentor.io/", "tags": ["project", "practice"] }
+    ] },
+    { "courseCode": "mobile", "resources": [
+      { "type": "lecture", "title": "Mobile Development Lecture Notes", "fileUrl": "https://https://flutter.dev/learn", "tags": ["lecture", "notes", "mobile"] },
+      { "type": "lecture", "title": "Mobile Course Slides", "fileUrl": "https://https://reactnative.dev/docs/getting-started", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Mobile App Development", "videoUrl": "https://www.youtube.com/watch?v=fis26HvvDII", "tags": ["mobile", "course"] },
+      { "type": "video", "title": "Flutter Development", "videoUrl": "https://www.youtube.com/watch?v=GLSG_Wh_YWc", "tags": ["flutter", "mobile"] },
+      { "type": "note", "title": "React Native Tutorial", "link": "https://reactnative.dev/docs/getting-started", "tags": ["tutorial", "reference"] },
+      { "type": "note", "title": "Flutter Documentation", "link": "https://flutter.dev/docs", "tags": ["documentation", "flutter"] },
+      { "type": "exam", "title": "Mobile App Projects", "link": "https://flutter.dev/showcase", "tags": ["project", "practice"] }
+    ] },
+    { "courseCode": "ai", "resources": [
+      { "type": "lecture", "title": "AI Lecture Notes", "fileUrl": "https://www.geeksforgeeks.org/gfg-academy/best-courses-for-artificial-intelligence/", "tags": ["lecture", "notes", "ai"] },
+      { "type": "lecture", "title": "AI Course Slides", "fileUrl": "https://https://www.coursera.org/learn/machine-learning", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Artificial Intelligence Full Course", "videoUrl": "https://www.youtube.com/watch?v=JMUxmLyrhSk", "tags": ["ai", "course"] },
+      { "type": "video", "title": "Machine Learning Tutorial", "videoUrl": "https://www.youtube.com/watch?v=JcI5Vnw0b2c", "tags": ["ml", "tutorial"] },
+      { "type": "note", "title": "Stanford AI Course", "link": "https://www.coursera.org/learn/machine-learning", "tags": ["course", "official"] },
+      { "type": "note", "title": "TensorFlow Documentation", "link": "https://www.tensorflow.org/learn", "tags": ["framework", "documentation"] },
+      { "type": "book", "title": "Artificial Intelligence: A Modern Approach", "link": "https://aima.cs.berkeley.edu/", "tags": ["book", "textbook"] },
+      { "type": "exam", "title": "AI/ML Practice Projects", "link": "https://www.kaggle.com/", "tags": ["practice", "datasets"] }
+    ] },
+    { "courseCode": "oose", "resources": [
+      { "type": "lecture", "title": "OOSE Lecture Notes", "fileUrl": "https://https://www.geeksforgeeks.org/software-engineering/", "tags": ["lecture", "notes", "oose"] },
+      { "type": "lecture", "title": "OOSE Course Slides", "fileUrl": "https://https://www.tutorialspoint.com/software_engineering/index.htm", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Object Oriented Software Engineering", "videoUrl": "https://www.youtube.com/watch?v=EujK1eRv2Kk", "tags": ["oose", "course"] },
+      { "type": "note", "title": "GeeksforGeeks OOP", "link": "https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/", "tags": ["tutorial", "reference"] },
+      { "type": "book", "title": "Software Engineering", "link": "https://www.pearson.com/us/higher-education.html", "tags": ["book", "textbook"] },
+      { "type": "exam", "title": "OOSE Practice", "link": "https://www.geeksforgeeks.org/software-engineering/", "tags": ["exam", "practice"] }
+    ] },
+    { "courseCode": "sw_req", "resources": [
+      { "type": "lecture", "title": "Software Requirements Lecture Notes", "fileUrl": "https://https://www.geeksforgeeks.org/software-engineering-requirements-engineering-process/", "tags": ["lecture", "notes", "sw_req"] },
+      { "type": "lecture", "title": "SW Requirements Course Slides", "fileUrl": "https://https://www.javatpoint.com/software-engineering-requirement-engineering", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Software Requirements", "videoUrl": "https://www.youtube.com/watch?v=p7EwYGS8Tck", "tags": ["requirements", "course"] },
+      { "type": "note", "title": "Requirements Engineering", "link": "https://www.geeksforgeeks.org/software-engineering-requirements-engineering-process/", "tags": ["tutorial", "reference"] },
+      { "type": "book", "title": "Software Requirements", "link": "https://www.microsoftpressstore.com/", "tags": ["book", "textbook"] },
+      { "type": "exam", "title": "Requirements Practice", "link": "https://www.geeksforgeeks.org/software-engineering/", "tags": ["exam", "practice"] }
+    ] },
+    { "courseCode": "ds_algo", "resources": [
+      { "type": "lecture", "title": "DSA Lecture Notes", "fileUrl": "https://www.geeksforgeeks.org/data-structures/", "tags": ["lecture", "notes", "ds_algo"] },
+      { "type": "lecture", "title": "DSA Course Slides", "fileUrl": "https://github.com/TheAlgorithms", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Data Structures and Algorithms", "videoUrl": "https://www.youtube.com/watch?v=8hly31xKli0", "tags": ["ds", "algo", "course"] },
+      { "type": "video", "title": "DSA Problem Solving", "videoUrl": "https://www.youtube.com/watch?v=EHpS2TBfWQg", "tags": ["ds", "problem-solving"] },
+      { "type": "note", "title": "GeeksforGeeks DSA", "link": "https://www.geeksforgeeks.org/data-structures/", "tags": ["tutorial", "reference"] },
+      { "type": "note", "title": "LeetCode Practice", "link": "https://leetcode.com/", "tags": ["practice", "problems"] },
+      { "type": "book", "title": "Introduction to Algorithms", "link": "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/", "tags": ["book", "textbook"] }
+    ] },
+    { "courseCode": "network_admin", "resources": [
+      { "type": "lecture", "title": "Network Admin Lecture Notes", "fileUrl": "https://www.cisco.com/c/en/us/support/index.html", "tags": ["lecture", "notes", "network_admin"] },
+      { "type": "lecture", "title": "Network Admin Course Materials", "fileUrl": "https://www.practicalnetworking.net/", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Network Administration", "videoUrl": "https://www.youtube.com/watch?v=qiQR5rTSshw", "tags": ["admin", "course"] },
+      { "type": "note", "title": "GeeksforGeeks Network Admin", "link": "https://www.geeksforgeeks.org/network-admin/", "tags": ["tutorial", "reference"] },
+      { "type": "book", "title": "Network Administration Guide", "link": "https://www.cisco.com/", "tags": ["book", "cisco"] },
+      { "type": "exam", "title": "Network Admin Practice", "link": "https://www.geeksforgeeks.org/network-admin/", "tags": ["exam", "practice"] }
+    ] },
+    { "courseCode": "erp", "resources": [
+      { "type": "lecture", "title": "ERP Lecture Notes", "fileUrl": "https://www.sap.com/insights/what-is-erp.html", "tags": ["lecture", "notes", "erp"] },
+      { "type": "lecture", "title": "ERP Course Materials", "fileUrl": "https://www.oracle.com/erp/", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Enterprise Resource Planning", "videoUrl": "https://www.youtube.com/watch?v=ZEq8xWbteUI", "tags": ["erp", "course"] },
+      { "type": "note", "title": "ERP Concepts", "link": "https://www.geeksforgeeks.org/enterprise-resource-planning-erp/", "tags": ["tutorial", "reference"] },
+      { "type": "book", "title": "ERP: Implementation Guide", "link": "https://www.sap.com/", "tags": ["book", "sap"] },
+      { "type": "exam", "title": "ERP Practice", "link": "https://www.geeksforgeeks.org/erp/", "tags": ["exam", "practice"] }
+    ] },
+    { "courseCode": "bpm", "resources": [
+      { "type": "lecture", "title": "BPM Lecture Notes", "fileUrl": "https://www.gartner.com/en/information-technology", "tags": ["lecture", "notes", "bpm"] },
+      { "type": "lecture", "title": "BPM Course Materials", "fileUrl": "https://www.bpm.com/", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Business Process Modeling", "videoUrl": "https://www.youtube.com/watch?v=MV_SFMGCmps", "tags": ["bpm", "course"] },
+      { "type": "note", "title": "BPM Concepts", "link": "https://www.geeksforgeeks.org/business-process-modelling/", "tags": ["tutorial", "reference"] },
+      { "type": "book", "title": "Business Process Management", "link": "https://www.camunda.com/", "tags": ["book", "reference"] },
+      { "type": "exam", "title": "BPM Practice", "link": "https://www.geeksforgeeks.org/bpm/", "tags": ["exam", "practice"] }
+    ] },
+    { "courseCode": "netsec", "resources": [
+      { "type": "lecture", "title": "Network Security Lecture Notes", "fileUrl": "https://www.cisco.com/c/en/us/products/security/index.html", "tags": ["lecture", "notes", "netsec"] },
+      { "type": "lecture", "title": "Network Security Course Materials", "fileUrl": "https://www.sans.org/", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Network Security", "videoUrl": "https://www.youtube.com/watch?v=inWWhr5tnEA", "tags": ["security", "course"] },
+      { "type": "note", "title": "GeeksforGeeks Network Security", "link": "https://www.geeksforgeeks.org/network-security/", "tags": ["tutorial", "reference"] },
+      { "type": "book", "title": "Network Security Principles", "link": "https://www.cisco.com/security/", "tags": ["book", "cisco"] },
+      { "type": "exam", "title": "Network Security Practice", "link": "https://www.geeksforgeeks.org/network-security/", "tags": ["exam", "practice"] }
+    ] },
+    { "courseCode": "crypto", "resources": [
+      { "type": "lecture", "title": "Cryptography Lecture Notes", "fileUrl": "https://www.cs.cornell.edu/courses/cs5137/", "tags": ["lecture", "notes", "crypto"] },
+      { "type": "lecture", "title": "Cryptography Course Materials", "fileUrl": "https://www.coursera.org/learn/cryptography", "tags": ["lecture", "slides"] },
+      { "type": "video", "title": "Cryptography Course", "videoUrl": "https://www.youtube.com/watch?v=w7H8mZXitGA", "tags": ["crypto", "course"] },
+      { "type": "note", "title": "GeeksforGeeks Cryptography", "link": "https://www.geeksforgeeks.org/cryptography/", "tags": ["tutorial", "reference"] },
+      { "type": "book", "title": "Applied Cryptography", "link": "https://www.schneier.com/books/applied-cryptography/", "tags": ["book", "textbook"] },
+      { "type": "exam", "title": "Cryptography Practice", "link": "https://www.geeksforgeeks.org/cryptography/", "tags": ["exam", "practice"] }
+  ] }
   ]
 }
 

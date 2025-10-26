@@ -1,0 +1,125 @@
+{
+  "exitExams": [
+    {
+      "departmentCode": "se",
+      "year": 2023,
+      "title": "Software Engineering Exit Exam 2023",
+      "description": "Bachelor's degree exit exam for Software Engineering Department",
+      "fileUrl": "https://REPLACE_WITH_ACTUAL_PDF_URL_2023_SE",
+      "university": "BDU",
+      "semester": "Spring",
+      "tags": ["exit-exam", "2023", "se"]
+    },
+    {
+      "departmentCode": "se",
+      "year": 2022,
+      "title": "Software Engineering Exit Exam 2022",
+      "description": "Bachelor's degree exit exam for Software Engineering Department",
+      "fileUrl": "https://REPLACE_WITH_ACTUAL_PDF_URL_2022_SE",
+      "university": "BDU",
+      "semester": "Spring",
+      "tags": ["exit-exam", "2022", "se"]
+    },
+    {
+      "departmentCode": "cs",
+      "year": 2023,
+      "title": "Computer Science Exit Exam 2023",
+      "description": "Bachelor's degree exit exam for Computer Science Department",
+      "fileUrl": "https://REPLACE_WITH_ACTUAL_PDF_URL_2023_CS",
+      "university": "BDU",
+      "semester": "Spring",
+      "tags": ["exit-exam", "2023", "cs"]
+    },
+    {
+      "departmentCode": "cs",
+      "year": 2022,
+      "title": "Computer Science Exit Exam 2022",
+      "description": "Bachelor's degree exit exam for Computer Science Department",
+      "fileUrl": "https://REPLACE_WITH_ACTUAL_PDF_URL_2022_CS",
+      "university": "BDU",
+      "semester": "Spring",
+      "tags": ["exit-exam", "2022", "cs"]
+    },
+    {
+      "departmentCode": "it",
+      "year": 2023,
+      "title": "Information Technology Exit Exam 2023",
+      "description": "Bachelor's degree exit exam for IT Department",
+      "fileUrl": "https://REPLACE_WITH_ACTUAL_PDF_URL_2023_IT",
+      "university": "BDU",
+      "semester": "Spring",
+      "tags": ["exit-exam", "2023", "it"]
+    },
+    {
+      "departmentCode": "it",
+      "year": 2022,
+      "title": "Information Technology Exit Exam 2022",
+      "description": "Bachelor's degree exit exam for IT Department",
+      "fileUrl": "https://REPLACE_WITH_ACTUAL_PDF_URL_2022_IT",
+      "university": "BDU",
+      "semester": "Spring",
+      "tags": ["exit-exam", "2022", "it"]
+    },
+    {
+      "departmentCode": "is",
+      "year": 2023,
+      "title": "Information Systems Exit Exam 2023",
+      "description": "Bachelor's degree exit exam for IS Department",
+      "fileUrl": "https://REPLACE_WITH_ACTUAL_PDF_URL_2023_IS",
+      "university": "BDU",
+      "semester": "Spring",
+      "tags": ["exit-exam", "2023", "is"]
+    },
+    {
+      "departmentCode": "is",
+      "year": 2022,
+      "title": "Information Systems Exit Exam 2022",
+      "description": "Bachelor's degree exit exam for IS Department",
+      "fileUrl": "https://REPLACE_WITH_ACTUAL_PDF_URL_2022_IS",
+      "university": "BDU",
+      "semester": "Spring",
+      "tags": ["exit-exam", "2022", "is"]
+    },
+    {
+      "departmentCode": "cyb",
+      "year": 2023,
+      "title": "Cyber Security Exit Exam 2023",
+      "description": "Bachelor's degree exit exam for Cyber Security Department",
+      "fileUrl": "https://REPLACE_WITH_ACTUAL_PDF_URL_2023_CYB",
+      "university": "BDU",
+      "semester": "Spring",
+      "tags": ["exit-exam", "2023", "cyb"]
+    },
+    {
+      "departmentCode": "cyb",
+      "year": 2022,
+      "title": "Cyber Security Exit Exam 2022",
+      "description": "Bachelor's degree exit exam for Cyber Security Department",
+      "fileUrl": "https://REPLACE_WITH_ACTUAL_PDF_URL_2022_CYB",
+      "university": "BDU",
+      "semester": "Spring",
+      "tags": ["exit-exam", "2022", "cyb"]
+    },
+    {
+      "departmentCode": "se",
+      "year": 2021,
+      "title": "Software Engineering Exit Exam 2021",
+      "description": "Bachelor's degree exit exam for Software Engineering Department",
+      "fileUrl": "https://REPLACE_WITH_ACTUAL_PDF_URL_2021_SE",
+      "university": "BDU",
+      "semester": "Spring",
+      "tags": ["exit-exam", "2021", "se"]
+    },
+    {
+      "departmentCode": "cs",
+      "year": 2021,
+      "title": "Computer Science Exit Exam 2021",
+      "description": "Bachelor's degree exit exam for Computer Science Department",
+      "fileUrl": "https://REPLACE_WITH_ACTUAL_PDF_URL_2021_CS",
+      "university": "BDU",
+      "semester": "Spring",
+      "tags": ["exit-exam", "2021", "cs"]
+    }
+  ]
+}
+

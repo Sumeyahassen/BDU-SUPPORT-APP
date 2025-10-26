@@ -33,11 +33,8 @@ class _ExitExamYearDepartmentScreenState
     Future.delayed(const Duration(seconds: 2), () {
       setState(() {
         _examFiles = [
-          'AAU Exit Exam.pdf',
-          'AATU Exit Exam.pdf',
-          'ASTU Exit Exam.pdf',
-          'BDU Exit Exam.pdf',
-          'JU Exit Exam.pdf',
+          'Exit Exam.pdf',
+          
         ];
         _isLoading = false;
       });
@@ -71,7 +68,7 @@ class _ExitExamYearDepartmentScreenState
               padding: const EdgeInsets.all(32.0),
               child: Column(
                 children: [
-                  Icon(Icons.description, color: _iconColor, size: 64),
+                 Icon(Icons.description, color: _iconColor, size: 64),
                   const SizedBox(height: 24),
                   Text(
                     'Exit Exam for ${widget.departmentName} (${widget.year})',
@@ -119,6 +116,7 @@ class _ExitExamYearDepartmentScreenState
                               ),
                               trailing: const Icon(Icons.open_in_new),
                               onTap: () => _openExamFile(fileName),
+                              
                             ),
                           );
                         },

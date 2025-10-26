@@ -24,17 +24,17 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.example.bdu_support_app"
-    // compileSdkVersion 34
-    compileSdkVersion flutter.compileSdkVersion
+   compileSdkVersion 34
+    // compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+    sourceCompatibility JavaVersion.VERSION_11
+    targetCompatibility JavaVersion.VERSION_11
+}
 
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '11'
     }
 
     sourceSets {
