@@ -22,7 +22,7 @@ COPY . .
 RUN mkdir -p /app/uploads
 
 # Expose backend port
-EXPOSE 5000
+EXPOSE 8080
 
 # Healthcheck for backend
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
