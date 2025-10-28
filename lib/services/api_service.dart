@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class ApiService {
   // When using Android emulator to reach host machine, use 10.0.2.2
-  static const String baseUrl = 'http://192.168.137.248:3001/api';
+  static const String baseUrl = 'http://192.168.137.248:5000/api';
 
   static Future<List<dynamic>> getExams() async {
     final url = Uri.parse('$baseUrl/exams');
